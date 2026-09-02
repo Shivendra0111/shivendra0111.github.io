@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shivendra Tiwari | ITSM Business Analyst & ServiceNow Specialist</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            },
+            accent: {
+              400: '#38bdf8',
+              500: '#0ea5e9',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
+
+  <!-- Glow Background -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 -left-40 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg">
+          ST
+        </div>
+        <div>
+          <span class="font-bold text-white block">Shivendra Tiwari</span>
+          <span class="text-xs text-slate-400 font-mono">ITSM BA &bull; ServiceNow</span>
+        </div>
+      </div>
+      <a href="mailto:shivendratiwari825@gmail.com" class="px-4 py-2 rounded-lg bg-brand-500 text-slate-950 font-bold text-xs hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20">
+        Contact Me
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      
+      <div class="lg:col-span-7 space-y-5">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card border border-brand-500/30 text-xs font-mono text-brand-400">
+          <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+          Available for ITSM & Business Analyst Roles
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+          Translating Business Needs Into <span class="gradient-text">Agile ITSM Architecture</span>
+        </h1>
+
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+          Data-driven <strong>ITSM Business Analyst</strong> with enterprise experience optimizing IT service operations, SLA governance, and cross-functional workflows supporting <strong>10,000+ global users</strong> across ServiceNow, ITIL v4, Power BI, and automated orchestration.
+        </p>
+
+        <!-- Quick Contacts -->
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="mailto:shivendratiwari825@gmail.com" class="px-5 py-3 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-brand-500/20">
+            <i data-lucide="mail" class="w-4 h-4"></i> Email Shivendra
+          </a>
+          <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white font-semibold text-xs sm:text-sm flex items-center gap-2 border border-slate-700">
+            <i data-lucide="linkedin" class="w-4 h-4 text-accent-400"></i> LinkedIn
+          </a>
+          <a href="https://github.com/Shivendra0111" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white font-semibold text-xs sm:text-sm flex items-center gap-2 border border-slate-700">
+            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+          </a>
+        </div>
+
+        <div class="pt-2 flex flex-wrap gap-4 text-xs text-slate-400 font-mono">
+          <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Bengaluru, India</span>
+          <span class="flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5 text-brand-400"></i> +91-8428396546</span>
+        </div>
+      </div>
+
+      <!-- Photo Card -->
+      <div class="lg:col-span-5 flex justify-center">
+        <div class="relative w-full max-w-xs sm:max-w-sm">
+          <div class="glass-card rounded-2xl p-3 border border-slate-700 shadow-2xl">
+            <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 relative">
+              <img 
+                src="https://github.com/Shivendra0111.png" 
+                alt="Shivendra Tiwari" 
+                class="w-full h-full object-cover"
+                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'"
+              />
+              <div class="absolute bottom-3 left-3 right-3 glass-card p-3 rounded-lg border border-white/10">
+                <div class="text-[10px] text-brand-400 font-mono uppercase font-bold">Specialist</div>
+                <div class="text-xs font-bold text-white">ServiceNow &bull; ITIL &bull; SLA Analytics</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Impact Numbers -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+      <div class="glass-card p-5 rounded-xl border border-slate-800">
+        <div class="text-3xl font-extrabold text-white font-mono">10,000+</div>
+        <div class="text-xs text-slate-400 mt-1">Users Supported</div>
+        <div class="text-[10px] text-slate-500 font-mono">Merck Business Services</div>
+      </div>
+      <div class="glass-card p-5 rounded-xl border border-slate-800">
+        <div class="text-3xl font-extrabold text-brand-400 font-mono">100%</div>
+        <div class="text-xs text-slate-400 mt-1">SLA Compliance</div>
+        <div class="text-[10px] text-slate-500 font-mono">Global Operations</div>
+      </div>
+      <div class="glass-card p-5 rounded-xl border border-slate-800">
+        <div class="text-3xl font-extrabold text-accent-400 font-mono">20%</div>
+        <div class="text-xs text-slate-400 mt-1">Backlog Aging Reduced</div>
+        <div class="text-[10px] text-slate-500 font-mono">Automated Escalations</div>
+      </div>
+      <div class="glass-card p-5 rounded-xl border border-slate-800">
+        <div class="text-3xl font-extrabold text-white font-mono">76%</div>
+        <div class="text-xs text-slate-400 mt-1">Feedback Volume Gain</div>
+        <div class="text-[10px] text-slate-500 font-mono">Trigger Feedback Loops</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Simulator -->
+  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="glass-card rounded-2xl border border-slate-800 p-6">
+      <div class="flex items-center gap-2 mb-4">
+        <i data-lucide="sliders" class="w-5 h-5 text-brand-400"></i>
+        <h3 class="text-lg font-bold text-white">Interactive ITSM Performance Simulator</h3>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="text-xs font-mono text-slate-400 block mb-2">Monthly Ticket Volume</label>
+          <input type="range" id="volRange" min="100" max="800" value="300" class="w-full accent-brand-500">
+          <span id="volLabel" class="text-xs font-bold text-brand-400 font-mono mt-1 block">300 tickets</span>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-xs text-slate-400 font-mono">Projected MTTR</div>
+          <div id="simMTTR" class="text-2xl font-bold text-white font-mono mt-1">2.4 hrs</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
+          <div class="text-xs text-slate-400 font-mono">Projected SLA Met</div>
+          <div class="text-2xl font-bold text-emerald-400 font-mono mt-1">99.8%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10 space-y-6">
+    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+      <i data-lucide="briefcase" class="w-5 h-5 text-brand-400"></i> Experience Track Record
+    </h2>
+
+    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+        <div>
+          <h3 class="text-lg font-bold text-white">Feedback Manager – IT Service & Operations Management</h3>
+          <div class="text-xs text-slate-400 font-mono">Merck Business Services &bull; Bengaluru, India</div>
+        </div>
+        <span class="text-xs font-mono bg-slate-900 px-3 py-1 rounded text-slate-300 w-fit">Sep. 2024 – Sep. 2025</span>
+      </div>
+      <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+        <li>&bull; Governed service-performance and feedback across IT, HR, and Procurement for <strong>10,000+ end users</strong> with <strong>100% SLA compliance</strong>.</li>
+        <li>&bull; Eliminated <strong>5+ hours of manual reporting weekly</strong> via automated ServiceNow Performance Analytics dashboards tracking MTTR and SLA breaches.</li>
+        <li>&bull; Reduced backlog aging by <strong>20%</strong> through automated escalation matrix triggers.</li>
+        <li>&bull; Executed root-cause analyses (RCA) across <strong>300+ monthly tickets</strong>; documented <strong>35+ UAT test cases</strong> ensuring zero-defect releases.</li>
+        <li>&bull; Engineered a <strong>GPT-powered internal support guidance assistant</strong> to streamline tier-1 query deflection.</li>
+      </ul>
+    </div>
+
+    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+        <div>
+          <h3 class="text-lg font-bold text-white">ITSM Operating Model & ServiceNow Transformation</h3>
+          <div class="text-xs text-slate-400 font-mono">Nexora Framework</div>
+        </div>
+        <span class="text-xs font-mono bg-slate-900 px-3 py-1 rounded text-slate-300 w-fit">Aug. 2026 – Present</span>
+      </div>
+      <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
+        <li>&bull; Designed end-to-end ITIL v4 operating model for Incident, Problem, Change, and Request workflows.</li>
+        <li>&bull; Authored BRDs, FRDs, and approval matrices; integrated operational data models with SQL and Power BI dashboards.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10">
+    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
+      <i data-lucide="cpu" class="w-5 h-5 text-brand-400"></i> Core Competencies
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono">
+      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
+        <span class="text-brand-400 font-bold block">ITSM & Governance</span>
+        <span class="text-slate-300 block">&bull; Incident & Problem Mgmt</span>
+        <span class="text-slate-300 block">&bull; Change Management</span>
+        <span class="text-slate-300 block">&bull; SLA Governance</span>
+        <span class="text-slate-300 block">&bull; ITIL v4 Principles</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
+        <span class="text-accent-400 font-bold block">Business Analysis</span>
+        <span class="text-slate-300 block">&bull; BRD & FRD Authoring</span>
+        <span class="text-slate-300 block">&bull; As-Is / To-Be Flows</span>
+        <span class="text-slate-300 block">&bull; UAT Test Planning</span>
+        <span class="text-slate-300 block">&bull; Gap Analysis</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
+        <span class="text-purple-400 font-bold block">BI & Data Analytics</span>
+        <span class="text-slate-300 block">&bull; ServiceNow Analytics</span>
+        <span class="text-slate-300 block">&bull; Power BI & DAX</span>
+        <span class="text-slate-300 block">&bull; SQL (Queries, Joins)</span>
+        <span class="text-slate-300 block">&bull; MTTR / FCR Reporting</span>
+      </div>
+      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
+        <span class="text-emerald-400 font-bold block">Automation</span>
+        <span class="text-slate-300 block">&bull; ServiceNow Platform</span>
+        <span class="text-slate-300 block">&bull; Power Automate</span>
+        <span class="text-slate-300 block">&bull; Python Scripting</span>
+        <span class="text-slate-300 block">&bull; Custom AI Support Bots</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certs -->
+  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-400"></i> Education
+        </h3>
+        <div class="text-xs text-slate-300">
+          <div class="font-bold text-white">MBA in Business Analytics</div>
+          <div class="text-slate-400">Bangalore University (2021 – 2023)</div>
+        </div>
+        <div class="text-xs text-slate-300 pt-2">
+          <div class="font-bold text-white">BBA in Business Analytics</div>
+          <div class="text-slate-400">University of Madras (2019 – 2021)</div>
+        </div>
+      </div>
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <h3 class="text-base font-bold text-white flex items-center gap-2">
+          <i data-lucide="award" class="w-4 h-4 text-accent-400"></i> Certifications & Targets
+        </h3>
+        <div class="text-xs text-slate-300 space-y-1">
+          <div>&bull; Business Analytics Specialization (UpGrad Campus)</div>
+          <div>&bull; SQL for Data Science (IBM)</div>
+          <div class="text-brand-400">&bull; Target: ITIL Foundation & ServiceNow CSA</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-900 py-8 px-6 text-center text-xs text-slate-500 font-mono">
+    &copy; Shivendra Tiwari &bull; Bengaluru, India &bull; +91-8428396546
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    const vol = document.getElementById('volRange');
+    const volLabel = document.getElementById('volLabel');
+    const simMTTR = document.getElementById('simMTTR');
+    vol.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value);
+      volLabel.textContent = `${val} tickets`;
+      simMTTR.textContent = `${(1.8 + (val / 500)).toFixed(1)} hrs`;
+    });
+  </script>
+</body>
+  </html>

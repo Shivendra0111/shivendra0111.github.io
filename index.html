@@ -10,10 +10,10 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
-  <!-- Chart.js for High-Performance Visuals -->
+  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
@@ -52,6 +52,10 @@
       background: rgba(2, 6, 23, 0.65);
       border: 1px solid rgba(255, 255, 255, 0.05);
     }
+    .glass-card-active {
+      border-color: rgba(16, 185, 129, 0.5) !important;
+      background: rgba(16, 185, 129, 0.08) !important;
+    }
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #38bdf8 100%);
       -webkit-background-clip: text;
@@ -68,9 +72,10 @@
 
   <!-- Ambient Glow Background -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-[32rem] h-[32rem] bg-brand-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -left-40 w-[32rem] h-[32rem] bg-accent-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-40 right-1/4 w-[32rem] h-[32rem] bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -top-40 -right-40 w-[34rem] h-[34rem] bg-brand-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -left-40 w-[34rem] h-[34rem] bg-accent-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-2/3 right-10 w-[30rem] h-[30rem] bg-purple-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 right-1/4 w-[34rem] h-[34rem] bg-emerald-500/10 rounded-full blur-3xl"></div>
   </div>
 
   <!-- Navigation Bar (Widescreen max-w-[1560px]) -->
@@ -86,16 +91,19 @@
         </div>
       </a>
 
-      <!-- Nav Links -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-brand-400 transition-colors">Competencies</a>
         <a href="#dashboard" class="hover:text-brand-400 transition-colors flex items-center gap-1.5">
-          <span>Impact Dashboard</span>
-          <span class="px-2 py-0.5 text-[10px] bg-brand-500/20 text-brand-400 rounded-full border border-brand-500/30 font-mono font-semibold">Live Analytics</span>
+          <span>Merck Dashboard</span>
+          <span class="px-2 py-0.5 text-[10px] bg-brand-500/20 text-brand-400 rounded-full border border-brand-500/30 font-mono">Live</span>
         </a>
-        <a href="#simulator" class="hover:text-brand-400 transition-colors">ITSM Simulator</a>
         <a href="#experience" class="hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#nexora-flow" class="hover:text-brand-400 transition-colors flex items-center gap-1.5">
+          <span>Nexora Architecture</span>
+          <span class="px-2 py-0.5 text-[10px] bg-accent-500/20 text-accent-400 rounded-full border border-accent-500/30 font-mono">CSDM v4</span>
+        </a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -129,10 +137,13 @@
         <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-4 pt-2">
           <a href="#dashboard" class="px-5 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 shadow-lg shadow-brand-500/20 transition-all">
-            <i data-lucide="bar-chart-2" class="w-4 h-4"></i> Explore Impact Dashboard
+            <i data-lucide="bar-chart-2" class="w-4 h-4"></i> Explore Merck Dashboard
+          </a>
+          <a href="#nexora-flow" class="px-5 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-accent-400 font-bold text-sm inline-flex items-center gap-2 border border-accent-500/40 shadow-lg transition-all">
+            <i data-lucide="git-branch" class="w-4 h-4"></i> View Nexora Framework
           </a>
           <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
-            <i data-lucide="linkedin" class="w-4 h-4 text-accent-400"></i> LinkedIn Profile
+            <i data-lucide="linkedin" class="w-4 h-4 text-accent-400"></i> LinkedIn
           </a>
           <a href="https://github.com/Shivendra0111" target="_blank" class="px-4 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
             <i data-lucide="github" class="w-4 h-4"></i>
@@ -147,7 +158,7 @@
         </div>
       </div>
 
-      <!-- Profile Photo -->
+      <!-- Profile Photo Card -->
       <div class="lg:col-span-4 flex justify-center lg:justify-end">
         <div class="relative w-full max-w-xs sm:max-w-sm">
           <div class="absolute -inset-1 bg-gradient-to-tr from-brand-500 to-accent-500 rounded-3xl blur-md opacity-30"></div>
@@ -283,14 +294,13 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- 3. UNIFIED MASTER RECTANGULAR GLASS DASHBOARD BOX        -->
+  <!-- 3. MERCK DASHBOARD (Single Master Rectangular Glass Box) -->
   <!-- ======================================================== -->
   <section id="dashboard" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10">
     
-    <!-- SINGLE MASTER RECTANGULAR GLASS CONTAINER -->
     <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
       
-      <!-- Top Cockpit Control Header Inside the Box -->
+      <!-- Cockpit Header -->
       <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-800 gap-4">
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
@@ -314,7 +324,7 @@
         </div>
       </div>
 
-      <!-- The 6 Charts Arranged in Widescreen 3-Column Grid -->
+      <!-- 6 Charts in Widescreen 3-Column Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
         <!-- Chart 1: Feedback Volume Growth (+76%) -->
@@ -340,7 +350,7 @@
           </div>
         </div>
 
-        <!-- Chart 2: SLA Multi-Domain Scope (100% Compliance) -->
+        <!-- Chart 2: SLA Multi-Domain Scope -->
         <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
             <div>
@@ -386,7 +396,7 @@
           </div>
         </div>
 
-        <!-- Chart 4: Reporting Hours Saved Weekly (5+ Hours) -->
+        <!-- Chart 4: Reporting Hours Saved Weekly -->
         <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
             <div>
@@ -543,15 +553,15 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- 5. WORK EXPERIENCE TIMELINE                              -->
+  <!-- 5. WORK EXPERIENCE TIMELINE & NEXORA FLOW GLASS BOX      -->
   <!-- ======================================================== -->
-  <section id="experience" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10 space-y-6">
+  <section id="experience" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10 space-y-8">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
           <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Career Experience
         </div>
-        <h2 class="text-3xl font-extrabold tracking-tight text-white">Professional Track Record</h2>
+        <h2 class="text-3xl font-extrabold tracking-tight text-white">Professional Track Record & Technical Implementations</h2>
       </div>
     </div>
 
@@ -612,17 +622,21 @@
       </div>
     </div>
 
-    <!-- Role 2: Nexora Framework Transformation -->
+    <!-- Role 2: Nexora Framework Transformation (Description) -->
     <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
         <div>
-          <h3 class="text-lg sm:text-xl font-bold text-white">Enterprise ITSM Operating Model & ServiceNow Transformation</h3>
-          <div class="text-xs sm:text-sm text-slate-400 mt-1">Nexora Framework &bull; Full-Lifecycle ITSM Design</div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Enterprise ITSM Operating Model & ServiceNow Transformation</h3>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-accent-500/20 text-accent-400 border border-accent-500/30">Flagship Portfolio</span>
+          </div>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1">Nexora Framework &bull; Full-Lifecycle ITIL v4 Design & Implementation</div>
         </div>
         <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">
           Aug. 2026 &ndash; Present
         </span>
       </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-xs sm:text-sm text-slate-300">
         <div class="space-y-3">
           <div class="flex items-start gap-2.5">
@@ -645,6 +659,277 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- >>> NEXORA MASTER PROJECT EXECUTION & FLOW DESIGN (GLASS RECTANGLE) <<< -->
+    <!-- ========================================================================= -->
+    <div id="nexora-flow" class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-accent-500/30 shadow-2xl relative overflow-hidden">
+      
+      <!-- Top Ribbon / Philosophy & Live Checkpoint -->
+      <div class="flex flex-col lg:flex-row lg:items-center justify-between pb-6 mb-8 border-b border-slate-800 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/15 border border-accent-500/30 text-xs font-mono text-accent-400 mb-2">
+            <i data-lucide="git-merge" class="w-3.5 h-3.5"></i> Architecture & Execution Blueprint
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Nexora Operating Model: Execution Flow & CSDM Design
+          </h3>
+          <p class="text-xs text-slate-400 mt-1 font-mono">
+            Core Operating Philosophy: <span class="text-brand-400 font-bold">Process &rarr; Data &rarr; Technology &rarr; Measurement</span>
+          </p>
+        </div>
+
+        <!-- Live Checkpoint Pill -->
+        <div class="p-3.5 rounded-2xl bg-slate-900/90 border border-slate-800 max-w-md">
+          <div class="flex items-center gap-2 text-xs font-mono">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
+            <span class="text-slate-200 font-bold">Current ServiceNow State:</span>
+          </div>
+          <p class="text-[11px] text-slate-400 font-mono mt-1 leading-relaxed">
+            <span class="text-emerald-400 font-semibold">Nexora Core</span> (Business Service) &amp; <span class="text-emerald-400 font-semibold">Nexora Service Operations</span> (Support Group) created. Next: Populate supporting CIs and link Service Instance.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4-Stage Horizontal Execution Pipeline Flow -->
+      <div class="mb-10">
+        <div class="text-xs font-mono uppercase tracking-wider text-slate-400 mb-4 flex items-center gap-2">
+          <i data-lucide="arrow-right-circle" class="w-4 h-4 text-brand-400"></i>
+          <span>End-to-End Delivery Sequence (14-Phase Implementation)</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          
+          <!-- Stage 1 -->
+          <div class="glass-card-inner p-5 rounded-2xl border-l-4 border-l-brand-400 space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 font-bold">Phase 01–03</span>
+              <span class="text-slate-500">Architecture</span>
+            </div>
+            <h4 class="text-sm font-bold text-white">CSDM &amp; Service Mapping</h4>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1.5 leading-tight">
+              <li>&bull; <span class="text-slate-200 font-semibold">Business Service:</span> Nexora Core</li>
+              <li>&bull; <span class="text-slate-200 font-semibold">Tier 1 Dependency:</span> Identity/SSO</li>
+              <li>&bull; <span class="text-slate-200 font-semibold">Infra CIs:</span> App Cluster, DB, LB</li>
+              <li>&bull; Ownership: Support &amp; Escalations</li>
+            </ul>
+          </div>
+
+          <!-- Stage 2 -->
+          <div class="glass-card-inner p-5 rounded-2xl border-l-4 border-l-accent-400 space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="px-2 py-0.5 rounded bg-accent-500/20 text-accent-400 font-bold">Phase 04–05</span>
+              <span class="text-slate-500">ServiceNow Native</span>
+            </div>
+            <h4 class="text-sm font-bold text-white">Platform Implementation</h4>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1.5 leading-tight">
+              <li>&bull; Support Groups &amp; Assignment Rules</li>
+              <li>&bull; Lifecycle: New &rarr; Triage &rarr; Resolved</li>
+              <li>&bull; Priority Matrix (Impact &times; Urgency)</li>
+              <li>&bull; SLA Timestamps &amp; Breaches</li>
+            </ul>
+          </div>
+
+          <!-- Stage 3 -->
+          <div class="glass-card-inner p-5 rounded-2xl border-l-4 border-l-purple-400 space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-400 font-bold">Phase 06–08</span>
+              <span class="text-slate-500">Analytics</span>
+            </div>
+            <h4 class="text-sm font-bold text-white">Synthetic Ops &amp; Power BI</h4>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1.5 leading-tight">
+              <li>&bull; Realistic Data with Discoverable Flaws</li>
+              <li>&bull; SQL Views: MTTR, Recurrence, SLA</li>
+              <li>&bull; Power BI Governance Dashboards</li>
+              <li>&bull; Automated Notifications &amp; Actions</li>
+            </ul>
+          </div>
+
+          <!-- Stage 4 -->
+          <div class="glass-card-inner p-5 rounded-2xl border-l-4 border-l-yellow-400 space-y-3">
+            <div class="flex justify-between items-center text-xs font-mono">
+              <span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400 font-bold">Phase 09–13</span>
+              <span class="text-slate-500">Improvement</span>
+            </div>
+            <h4 class="text-sm font-bold text-white">Incident &rarr; Problem &rarr; CSI</h4>
+            <ul class="text-[11px] font-mono text-slate-300 space-y-1.5 leading-tight">
+              <li>&bull; P1 Emergency Change Rollback</li>
+              <li>&bull; Problem PRB00042 (Authentication)</li>
+              <li>&bull; Known Error Database (KEDB)</li>
+              <li>&bull; Continual Improvement Backlog</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Interactive Deep-Dive Inspector Workbench -->
+      <div class="glass-card-inner rounded-2xl p-6 border border-slate-800">
+        
+        <!-- Tab Selectors -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-800">
+          <div class="text-xs font-mono text-slate-300 font-bold flex items-center gap-2">
+            <i data-lucide="layers" class="w-4 h-4 text-accent-400"></i>
+            <span>Interactive Technical Blueprint Explorer:</span>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 text-xs font-mono">
+            <button onclick="switchNexoraTab('csdm')" id="tabBtn-csdm" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 hover:text-white glass-card-active transition-all">
+              1. CSDM v4 Dependency Map
+            </button>
+            <button onclick="switchNexoraTab('p1')" id="tabBtn-p1" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 hover:text-white transition-all">
+              2. P1 Major Incident &amp; Emergency Change
+            </button>
+            <button onclick="switchNexoraTab('problem')" id="tabBtn-problem" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 hover:text-white transition-all">
+              3. Problem RCA (PRB00042)
+            </button>
+            <button onclick="switchNexoraTab('data')" id="tabBtn-data" class="px-3 py-1.5 rounded-lg border border-slate-700 bg-slate-900 text-slate-300 hover:text-white transition-all">
+              4. SQL &amp; Power BI Analytics
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: CSDM Map Content -->
+        <div id="tabContent-csdm" class="pt-6 space-y-4">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-2">
+            <div>
+              <h4 class="text-base font-bold text-white">CSDM-Oriented Service &amp; Configuration Item Topology</h4>
+              <p class="text-xs text-slate-400 font-mono">Separating customer-facing capability from underlying infrastructure dependencies.</p>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-1 rounded">
+              CI Class Manager Verified
+            </span>
+          </div>
+
+          <!-- Flow Chart Visual Node Representation -->
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs font-mono">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 text-center">
+              
+              <div class="p-3 rounded-lg bg-emerald-500/15 border border-emerald-500/40 text-emerald-300">
+                <div class="text-[10px] text-slate-400 uppercase">Business Service</div>
+                <div class="font-bold text-sm mt-0.5">Nexora Core</div>
+                <div class="text-[9px] text-slate-400 mt-1">Criticality: 1 - Most Critical</div>
+              </div>
+
+              <div class="flex items-center justify-center text-slate-500 font-bold text-base">&rarr; depends on &rarr;</div>
+
+              <div class="p-3 rounded-lg bg-accent-500/15 border border-accent-500/40 text-accent-300">
+                <div class="text-[10px] text-slate-400 uppercase">Tier-1 Auth Dependency</div>
+                <div class="font-bold text-sm mt-0.5">Identity / SSO</div>
+                <div class="text-[9px] text-slate-400 mt-1">Single Point of Failure</div>
+              </div>
+
+              <div class="flex items-center justify-center text-slate-500 font-bold text-base">&rarr; routes to &rarr;</div>
+
+              <div class="p-3 rounded-lg bg-purple-500/15 border border-purple-500/40 text-purple-300">
+                <div class="text-[10px] text-slate-400 uppercase">Compute &amp; Data Layer</div>
+                <div class="font-bold text-sm mt-0.5">App Cluster &amp; DB</div>
+                <div class="text-[9px] text-slate-400 mt-1">Load Balancer &amp; Storage</div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono text-slate-300">
+            <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="text-brand-400 font-bold">&bull; Ownership Matrix Model:</span> CI &rarr; Technical Owner &rarr; Support Group (Nexora Service Operations) &rarr; Escalation Group &rarr; Business Service Owner.
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-800">
+              <span class="text-accent-400 font-bold">&bull; Criticality Reasoning:</span> Identity/SSO elevated to Tier 1 because failure instantly cascades into total customer lockout regardless of database state.
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 2: P1 Major Incident & Emergency Change -->
+        <div id="tabContent-p1" class="pt-6 space-y-4 hidden">
+          <div>
+            <h4 class="text-base font-bold text-white">Scenario: 25% Global Authentication Lockout (P1 &rarr; Emergency Change)</h4>
+            <p class="text-xs text-slate-400 font-mono">Incident lifecycle and governed production rollback without bypassing change approval.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-950/80 border border-slate-800 text-xs font-mono space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+              <span class="text-rose-400 font-bold">1. P1 Triage (High Impact + High Urgency)</span>
+              <span class="text-slate-400">25% customers affected (India, Germany, US, Singapore) &bull; Zero workaround</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+              <span class="text-yellow-400 font-bold">2. Root Cause Correlation</span>
+              <span class="text-slate-400">Recent production change suspected &bull; Rollback assessment evaluated for safety</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
+              <span class="text-accent-400 font-bold">3. Emergency Change Governance</span>
+              <span class="text-slate-400">Emergency Change created for rollback &bull; Zero unauthorized out-of-band updates</span>
+            </div>
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="text-emerald-400 font-bold">4. Restoration &amp; Hand-Off</span>
+              <span class="text-slate-400">Service restored &bull; Incident resolved &bull; Transferred to Problem Mgmt (PRB00042)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB 3: Problem RCA (PRB00042) -->
+        <div id="tabContent-problem" class="pt-6 space-y-4 hidden">
+          <div>
+            <h4 class="text-base font-bold text-white">PRB00042 &bull; Recurring Authentication Configuration Failures</h4>
+            <p class="text-xs text-slate-400 font-mono">A recurring P1 is never simply closed; it mandates systemic root-cause investigation.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs font-mono">
+            <div class="p-3.5 rounded-lg bg-slate-950 border border-slate-800">
+              <div class="text-slate-400 text-[10px]">Historical Pattern</div>
+              <div class="text-base font-bold text-white mt-1">18 Incidents / 6 Mos</div>
+              <div class="text-rose-400 text-[10px] mt-0.5">12 linked directly to Changes</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-slate-950 border border-slate-800">
+              <div class="text-slate-400 text-[10px]">Operational Friction</div>
+              <div class="text-base font-bold text-yellow-400 mt-1">MTTR 2.8 Hours</div>
+              <div class="text-slate-400 text-[10px] mt-0.5">3 SLA breaches, 5 escalations</div>
+            </div>
+            <div class="p-3.5 rounded-lg bg-slate-950 border border-slate-800">
+              <div class="text-slate-400 text-[10px]">RCA Objective</div>
+              <div class="text-base font-bold text-brand-400 mt-1">KEDB &amp; Controls</div>
+              <div class="text-slate-400 text-[10px] mt-0.5">UAT vs. Production gap audit</div>
+            </div>
+          </div>
+
+          <div class="p-3.5 bg-slate-900/60 rounded-lg text-xs font-mono text-slate-300 border border-slate-800">
+            <span class="text-brand-400 font-bold">&bull; RCA Decision Rule:</span> Never assume People, Process, or Technology is the root cause before operational evidence supports it. Formulate hypothesis, cross-reference CI change history, update Known Error Database (KEDB), and implement automated validation gates.
+          </div>
+        </div>
+
+        <!-- TAB 4: SQL & Power BI Analytics -->
+        <div id="tabContent-data" class="pt-6 space-y-4 hidden">
+          <div>
+            <h4 class="text-base font-bold text-white">Target Analytics &amp; Decision Framework (SQL &rarr; Power BI)</h4>
+            <p class="text-xs text-slate-400 font-mono">Connecting operational datasets to executive decisions rather than just displaying raw numbers.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono text-slate-300">
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div class="text-brand-400 font-bold text-sm">Core SQL Queries &amp; Views:</div>
+              <ul class="space-y-1 text-slate-400 text-[11px]">
+                <li>&bull; Repeat incident frequency by Configuration Item (CI)</li>
+                <li>&bull; Change Failure Rate (CFR) and emergency rollback ratios</li>
+                <li>&bull; Actual SLA breach duration vs calendar schedules</li>
+                <li>&bull; Resolver group triage velocity and backlog aging buckets</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
+              <div class="text-accent-400 font-bold text-sm">Power BI Decision Dashboards:</div>
+              <ul class="space-y-1 text-slate-400 text-[11px]">
+                <li>&bull; Executive Service Health Matrix (Nexora Core availability)</li>
+                <li>&bull; SLA Governance &amp; Penalty Risk Projections</li>
+                <li>&bull; Incident-to-Problem Conversion Ratios</li>
+                <li>&bull; CSI Action Backlog tracking and post-fix validation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
     <!-- Role 3: Commercial Project Coordination -->
@@ -759,11 +1044,28 @@
   </footer>
 
   <!-- ======================================================== -->
-  <!-- SCRIPTS: LUCIDE, CHART CONFIGS & SIMULATOR LOGIC         -->
+  <!-- SCRIPTS: LUCIDE, CHARTS, SIMULATOR & NEXORA TABS         -->
   <!-- ======================================================== -->
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Nexora Tab Switcher Logic
+    function switchNexoraTab(tabKey) {
+      const tabs = ['csdm', 'p1', 'problem', 'data'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`tabBtn-${t}`);
+        const content = document.getElementById(`tabContent-${t}`);
+        if (t === tabKey) {
+          btn.classList.add('glass-card-active', 'border-brand-500/50', 'text-brand-300');
+          content.classList.remove('hidden');
+        } else {
+          btn.classList.remove('glass-card-active', 'border-brand-500/50', 'text-brand-300');
+          content.classList.add('hidden');
+        }
+      });
+      lucide.createIcons();
+    }
 
     // Chart.js Global Dark Theme Defaults
     Chart.defaults.color = '#94a3b8';
@@ -934,7 +1236,7 @@
           backgroundColor: [
             'rgba(168, 85, 247, 0.8)',
             'rgba(56, 189, 248, 0.8)',
-            'rgba(16, 185, 129, 0.8)',
+            'rgba(168, 85, 247, 0.8)',
             'rgba(251, 146, 60, 0.8)'
           ],
           borderRadius: 6

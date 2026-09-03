@@ -48,13 +48,9 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    .glass-card-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .glass-card-hover:hover {
-      border-color: rgba(16, 185, 129, 0.35);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px -10px rgba(16, 185, 129, 0.15);
+    .glass-card-inner {
+      background: rgba(2, 6, 23, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #38bdf8 100%);
@@ -64,7 +60,7 @@
     .chart-container {
       position: relative;
       width: 100%;
-      height: 240px;
+      height: 220px;
     }
   </style>
 </head>
@@ -72,20 +68,20 @@
 
   <!-- Ambient Glow Background -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -left-40 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-40 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -top-40 -right-40 w-[32rem] h-[32rem] bg-brand-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -left-40 w-[32rem] h-[32rem] bg-accent-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 right-1/4 w-[32rem] h-[32rem] bg-emerald-500/10 rounded-full blur-3xl"></div>
   </div>
 
-  <!-- Navigation Bar -->
+  <!-- Navigation Bar (Widescreen max-w-[1560px]) -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <div class="max-w-[1560px] mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg group-hover:scale-105 transition-transform">
           ST
         </div>
         <div>
-          <span class="font-bold text-white block">Shivendra Tiwari</span>
+          <span class="font-bold text-white block text-sm sm:text-base">Shivendra Tiwari</span>
           <span class="text-xs text-slate-400 font-mono">ITSM BA &bull; ServiceNow Specialist</span>
         </div>
       </a>
@@ -93,13 +89,13 @@
       <!-- Nav Links -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+        <a href="#skills" class="hover:text-brand-400 transition-colors">Competencies</a>
         <a href="#dashboard" class="hover:text-brand-400 transition-colors flex items-center gap-1.5">
           <span>Impact Dashboard</span>
-          <span class="px-2 py-0.5 text-[10px] bg-brand-500/20 text-brand-400 rounded-full border border-brand-500/30 font-mono font-semibold">Live Visuals</span>
+          <span class="px-2 py-0.5 text-[10px] bg-brand-500/20 text-brand-400 rounded-full border border-brand-500/30 font-mono font-semibold">Live Analytics</span>
         </a>
         <a href="#simulator" class="hover:text-brand-400 transition-colors">ITSM Simulator</a>
         <a href="#experience" class="hover:text-brand-400 transition-colors">Experience</a>
-        <a href="#skills" class="hover:text-brand-400 transition-colors">Competencies</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -110,11 +106,13 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="about" class="pt-32 pb-16 px-6 max-w-7xl mx-auto relative z-10">
+  <!-- ======================================================== -->
+  <!-- 1. HERO SECTION (Introduction & Image)                  -->
+  <!-- ======================================================== -->
+  <section id="about" class="pt-32 pb-10 px-6 max-w-[1560px] mx-auto relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <div class="lg:col-span-7 space-y-6">
+      <div class="lg:col-span-8 space-y-6">
         <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full glass-card border border-brand-500/30 text-xs font-mono text-brand-400">
           <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
           Available for ITSM & Business Analyst Roles &bull; Bengaluru
@@ -124,16 +122,16 @@
           Translating Business Needs Into <span class="gradient-text">Agile ITSM Architecture</span>
         </h1>
 
-        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl">
           Data-driven <strong>ITSM Business Analyst</strong> with enterprise experience optimizing IT service operations, SLA governance, and cross-functional workflows supporting <strong>10,000+ global users</strong> across ServiceNow, ITIL v4, Power BI, and automated orchestration.
         </p>
 
-        <!-- CTA Action Buttons -->
+        <!-- CTA Buttons -->
         <div class="flex flex-wrap gap-4 pt-2">
           <a href="#dashboard" class="px-5 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 shadow-lg shadow-brand-500/20 transition-all">
             <i data-lucide="bar-chart-2" class="w-4 h-4"></i> Explore Impact Dashboard
           </a>
-          <a href="https://www.linkedin.com/in/shivendra-tiwari-7a0061218/" target="_blank" class="px-5 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
+          <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
             <i data-lucide="linkedin" class="w-4 h-4 text-accent-400"></i> LinkedIn Profile
           </a>
           <a href="https://github.com/Shivendra0111" target="_blank" class="px-4 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
@@ -141,7 +139,7 @@
           </a>
         </div>
 
-        <!-- Quick Info Tags -->
+        <!-- Location & Contact metadata tags -->
         <div class="pt-2 flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
           <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Bengaluru, India</span>
           <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-brand-400"></i> +91-8428396546</span>
@@ -149,9 +147,9 @@
         </div>
       </div>
 
-      <!-- Photo Showcase -->
-      <div class="lg:col-span-5 flex justify-center">
-        <div class="relative w-full max-w-sm">
+      <!-- Profile Photo -->
+      <div class="lg:col-span-4 flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-xs sm:max-w-sm">
           <div class="absolute -inset-1 bg-gradient-to-tr from-brand-500 to-accent-500 rounded-3xl blur-md opacity-30"></div>
           <div class="relative glass-card rounded-2xl p-3 border border-slate-700 shadow-2xl">
             <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 relative">
@@ -182,8 +180,8 @@
 
     </div>
 
-    <!-- High-Impact Quick Metric Counters -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+    <!-- Quick Numeric Impact Counters -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
       <div class="glass-card p-5 rounded-2xl border border-slate-800">
         <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono">10,000<span class="text-brand-400">+</span></div>
         <div class="text-xs text-slate-300 font-medium mt-1">Users Supported</div>
@@ -208,199 +206,286 @@
   </section>
 
   <!-- ======================================================== -->
-  <!-- DETAILED GRAPHICAL IMPACT DASHBOARD (Merck Metrics)    -->
+  <!-- 2. CORE COMPETENCIES (Moved Immediately Below Intro)     -->
   <!-- ======================================================== -->
-  <section id="dashboard" class="py-16 px-6 max-w-7xl mx-auto relative z-10">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
-      <div>
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
-          <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> Performance Analytics Engine
-        </div>
-        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
-          Merck IT Service & Operations Impact Dashboard
-        </h2>
+  <section id="skills" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10">
+    <div class="flex items-center gap-3 mb-6">
+      <div class="p-2 rounded-lg bg-brand-500/10 text-brand-400">
+        <i data-lucide="layers" class="w-5 h-5"></i>
       </div>
-      <div class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-2 rounded-lg">
-        Data Period: Sep 2024 &ndash; Sep 2025 &bull; 10,000+ End Users
+      <div>
+        <h2 class="text-2xl font-bold tracking-tight text-white">Technical & Functional Matrix &bull; Core Competencies</h2>
+        <p class="text-xs text-slate-400 font-mono">Structured domain capabilities aligned to ITIL v4 and ServiceNow frameworks</p>
       </div>
     </div>
 
-    <!-- 6 Detailed Graphical Cards -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-
-      <!-- Chart 1: Feedback Volume Growth (76% Increase) -->
-      <div class="lg:col-span-8 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i data-lucide="trending-up" class="w-4 h-4 text-accent-400"></i>
-                Feedback Intake & VOC Adoption Inflection
-              </h3>
-              <p class="text-xs text-slate-400 mt-0.5">Automated trigger loops increased monthly feedback from ~170 to 300+ entries (+76%)</p>
-            </div>
-            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded">
-              +76% Lift
-            </span>
-          </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <!-- Card 1 -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
+          <i data-lucide="shield" class="w-5 h-5"></i>
         </div>
-        <div class="chart-container mt-4">
-          <canvas id="feedbackChart"></canvas>
-        </div>
-        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
-          <span>Inflection: Q1 Automated Trigger Release</span>
-          <span class="text-brand-400">Steady State: 310+ Monthly</span>
-        </div>
+        <h3 class="text-base font-bold text-white">ITSM & Governance</h3>
+        <ul class="text-xs text-slate-300 space-y-2 font-mono">
+          <li class="flex items-center gap-2">&bull; Incident & Major Incident Mgmt</li>
+          <li class="flex items-center gap-2">&bull; Problem & Change Mgmt</li>
+          <li class="flex items-center gap-2">&bull; Service Request Workflows</li>
+          <li class="flex items-center gap-2">&bull; SLA Governance & Design</li>
+          <li class="flex items-center gap-2">&bull; CSI & Process Standardization</li>
+        </ul>
       </div>
 
-      <!-- Chart 2: SLA Multi-Domain Scope & 100% Compliance -->
-      <div class="lg:col-span-4 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i data-lucide="pie-chart" class="w-4 h-4 text-brand-400"></i>
-                100% SLA Multi-Domain Scope
-              </h3>
-              <p class="text-xs text-slate-400 mt-0.5">Governed across 10,000+ global users</p>
-            </div>
-          </div>
+      <!-- Card 2 -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-400 flex items-center justify-center">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
         </div>
-        <div class="chart-container mt-4 flex items-center justify-center">
-          <canvas id="domainChart"></canvas>
-        </div>
-        <div class="mt-3 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono">
-          <span class="text-slate-400">SLA Standard: &ge; 95%</span>
-          <span class="text-emerald-400 font-bold">Maintained: 100.0%</span>
-        </div>
+        <h3 class="text-base font-bold text-white">Business Analysis</h3>
+        <ul class="text-xs text-slate-300 space-y-2 font-mono">
+          <li class="flex items-center gap-2">&bull; Requirements (BRD / FRD)</li>
+          <li class="flex items-center gap-2">&bull; As-Is / To-Be Process Mapping</li>
+          <li class="flex items-center gap-2">&bull; Gap Analysis & Impact Review</li>
+          <li class="flex items-center gap-2">&bull; Approval Matrix Modeling</li>
+          <li class="flex items-center gap-2">&bull; UAT Test Plan Execution (35+ Scenarios)</li>
+        </ul>
       </div>
 
-      <!-- Chart 3: Backlog Aging Reduction (-20%) -->
-      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
-                Backlog Aging Profile: Before vs. After
-              </h3>
-              <p class="text-xs text-slate-400 mt-0.5">Automated escalation matrix & breach notifications reduced critical aging by 20%</p>
-            </div>
-            <span class="text-xs font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded">
-              -20% Critical Aging
-            </span>
-          </div>
+      <!-- Card 3 -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+          <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
         </div>
-        <div class="chart-container mt-4">
-          <canvas id="backlogChart"></canvas>
-        </div>
-        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
-          <span class="text-rose-400">&bull; Pre-Implementation</span>
-          <span class="text-emerald-400">&bull; Post-Escalation Matrix</span>
-        </div>
+        <h3 class="text-base font-bold text-white">Data Analytics & BI</h3>
+        <ul class="text-xs text-slate-300 space-y-2 font-mono">
+          <li class="flex items-center gap-2">&bull; ServiceNow Performance Analytics</li>
+          <li class="flex items-center gap-2">&bull; Power BI (DAX, Data Modeling)</li>
+          <li class="flex items-center gap-2">&bull; SQL (Complex Queries, Joins)</li>
+          <li class="flex items-center gap-2">&bull; MTTR, FCR, Backlog Aging Tracking</li>
+          <li class="flex items-center gap-2">&bull; Advanced Excel (Pivots, Lookups)</li>
+        </ul>
       </div>
 
-      <!-- Chart 4: Reporting Hours Saved Weekly (5+ Hours) -->
-      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
-                Reporting Effort: Manual vs. Automated
-              </h3>
-              <p class="text-xs text-slate-400 mt-0.5">Eliminated 5+ hours weekly via ServiceNow Performance Analytics dashboards</p>
-            </div>
-            <span class="text-xs font-mono text-yellow-400 bg-yellow-500/15 border border-yellow-500/30 px-2 py-0.5 rounded">
-              5+ Hrs/Wk Saved
-            </span>
-          </div>
+      <!-- Card 4 -->
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+          <i data-lucide="bot" class="w-5 h-5"></i>
         </div>
-        <div class="chart-container mt-4">
-          <canvas id="reportingChart"></canvas>
-        </div>
-        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
-          <span>Weekly Time: 6.2 hrs &rarr; 0.9 hrs</span>
-          <span class="text-yellow-400">8+ Operational KPIs Monitored</span>
-        </div>
+        <h3 class="text-base font-bold text-white">Automation & Tools</h3>
+        <ul class="text-xs text-slate-300 space-y-2 font-mono">
+          <li class="flex items-center gap-2">&bull; ServiceNow Platform Config</li>
+          <li class="flex items-center gap-2">&bull; Microsoft Power Automate</li>
+          <li class="flex items-center gap-2">&bull; Python Data Processing</li>
+          <li class="flex items-center gap-2">&bull; Custom GPT Support Bot Engine</li>
+          <li class="flex items-center gap-2">&bull; Automated Breach Triggers</li>
+        </ul>
       </div>
-
-      <!-- Chart 5: Root-Cause Analysis (RCA) Distribution (300+ Tickets) -->
-      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i data-lucide="filter" class="w-4 h-4 text-purple-400"></i>
-                Monthly RCA Categorization (300+ Tickets)
-              </h3>
-              <p class="text-xs text-slate-400 mt-0.5">Root causes identified for Continual Service Improvement (CSI) roadmaps</p>
-            </div>
-          </div>
-        </div>
-        <div class="chart-container mt-4">
-          <canvas id="rcaChart"></canvas>
-        </div>
-        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
-          <span>Presented Monthly to Executive Business Heads</span>
-          <span class="text-purple-400">300+ Tickets Analyzed</span>
-        </div>
-      </div>
-
-      <!-- Chart 6: UAT & Functional Release Stability -->
-      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
-        <div>
-          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
-            <div>
-              <h3 class="text-base font-bold text-white flex items-center gap-2">
-                <i data-lucide="check-check" class="w-4 h-4 text-brand-400"></i>
-                Release Quality & UAT Test Execution
-              </h3>
-              <p class="text-xs text-slate-400 mt-0.5">100% functional stability across 35+ end-to-end multi-scenario test plans</p>
-            </div>
-            <span class="text-xs font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded">
-              0 Critical Defects
-            </span>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-3 my-4">
-          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
-            <div class="text-2xl font-extrabold text-white font-mono">35+</div>
-            <div class="text-[11px] text-slate-400 mt-1">Multi-Scenario UAT Scenarios</div>
-            <div class="text-[10px] text-brand-400 font-mono mt-0.5">100% Pass Rate</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
-            <div class="text-2xl font-extrabold text-emerald-400 font-mono">100%</div>
-            <div class="text-[11px] text-slate-400 mt-1">Functional Stability</div>
-            <div class="text-[10px] text-slate-500 font-mono">Zero Rollbacks</div>
-          </div>
-          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
-            <div class="text-2xl font-extrabold text-accent-400 font-mono">GPT</div>
-            <div class="text-[11px] text-slate-400 mt-1">Internal Support Bot</div>
-            <div class="text-[10px] text-accent-400 font-mono">Tier-1 Deflection</div>
-          </div>
-        </div>
-
-        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 space-y-1 font-mono">
-          <div class="text-brand-400 font-bold">&bull; UAT Scope Coverage:</div>
-          <div class="text-slate-400 text-[11px]">IT Incident Routing, HR Self-Service Portals, Vendor Procurement Approval Hierarchies, Automated Breach Notifications.</div>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- Interactive ITSM Simulator -->
-  <section id="simulator" class="py-16 px-6 max-w-7xl mx-auto relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-10">
+  <!-- ======================================================== -->
+  <!-- 3. UNIFIED MASTER RECTANGULAR GLASS DASHBOARD BOX        -->
+  <!-- ======================================================== -->
+  <section id="dashboard" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10">
+    
+    <!-- SINGLE MASTER RECTANGULAR GLASS CONTAINER -->
+    <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+      
+      <!-- Top Cockpit Control Header Inside the Box -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-800 gap-4">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
+            <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> Performance Analytics Engine
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            Merck IT Service & Operations Analytics Dashboard
+          </h2>
+          <p class="text-xs text-slate-400 mt-1">
+            Complete visual representation of operational achievements across 10,000+ global users &bull; Sep 2024 &ndash; Sep 2025
+          </p>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <span class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg">
+            ServiceNow PA Console
+          </span>
+          <span class="text-xs font-mono text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-3 py-1.5 rounded-lg font-semibold">
+            100% SLA Governed
+          </span>
+        </div>
+      </div>
+
+      <!-- The 6 Charts Arranged in Widescreen 3-Column Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+        <!-- Chart 1: Feedback Volume Growth (+76%) -->
+        <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="trending-up" class="w-4 h-4 text-accent-400"></i>
+                Feedback Intake & VOC Adoption
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">Automated trigger loops: ~170 &rarr; 300+ monthly entries</p>
+            </div>
+            <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded font-bold">
+              +76%
+            </span>
+          </div>
+          <div class="chart-container mt-3">
+            <canvas id="feedbackChart"></canvas>
+          </div>
+          <div class="mt-2 pt-2 border-t border-slate-800/60 text-[10px] font-mono text-slate-400 flex items-center justify-between">
+            <span>Inflection: Q1 Trigger Release</span>
+            <span class="text-brand-400">Steady State: 310+</span>
+          </div>
+        </div>
+
+        <!-- Chart 2: SLA Multi-Domain Scope (100% Compliance) -->
+        <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-brand-400"></i>
+                SLA Multi-Domain Scope (10k+ Users)
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">IT, HR, and Procurement global workflows</p>
+            </div>
+            <span class="text-[10px] font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded font-bold">
+              100% SLA
+            </span>
+          </div>
+          <div class="chart-container mt-3 flex items-center justify-center">
+            <canvas id="domainChart"></canvas>
+          </div>
+          <div class="mt-2 pt-2 border-t border-slate-800/60 text-[10px] font-mono flex items-center justify-between">
+            <span class="text-slate-400">Baseline Target: &ge; 95%</span>
+            <span class="text-emerald-400 font-bold">Delivered: 100.0%</span>
+          </div>
+        </div>
+
+        <!-- Chart 3: Backlog Aging Reduction (-20%) -->
+        <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
+                Backlog Aging: Pre vs. Post Controls
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">Escalation matrix & breach triggers reduced aging</p>
+            </div>
+            <span class="text-[10px] font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded font-bold">
+              -20% Aging
+            </span>
+          </div>
+          <div class="chart-container mt-3">
+            <canvas id="backlogChart"></canvas>
+          </div>
+          <div class="mt-2 pt-2 border-t border-slate-800/60 text-[10px] font-mono text-slate-400 flex items-center justify-between">
+            <span class="text-rose-400">&bull; Pre-Controls</span>
+            <span class="text-emerald-400">&bull; Post-Matrix (-20%)</span>
+          </div>
+        </div>
+
+        <!-- Chart 4: Reporting Hours Saved Weekly (5+ Hours) -->
+        <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                Reporting Effort: Manual vs. Automated
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">ServiceNow Performance Analytics dashboards</p>
+            </div>
+            <span class="text-[10px] font-mono text-yellow-400 bg-yellow-500/15 border border-yellow-500/30 px-2 py-0.5 rounded font-bold">
+              -5+ Hrs/Wk
+            </span>
+          </div>
+          <div class="chart-container mt-3">
+            <canvas id="reportingChart"></canvas>
+          </div>
+          <div class="mt-2 pt-2 border-t border-slate-800/60 text-[10px] font-mono text-slate-400 flex items-center justify-between">
+            <span>Weekly Effort: 6.2 hrs &rarr; 0.9 hrs</span>
+            <span class="text-yellow-400">8+ Core KPIs</span>
+          </div>
+        </div>
+
+        <!-- Chart 5: Root-Cause Analysis (RCA) Distribution -->
+        <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="filter" class="w-4 h-4 text-purple-400"></i>
+                Root-Cause Categorization (300+ Tickets)
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">Monthly failure modes evaluated for CSI</p>
+            </div>
+            <span class="text-[10px] font-mono text-purple-400 bg-purple-500/15 border border-purple-500/30 px-2 py-0.5 rounded font-bold">
+              300+ Tix
+            </span>
+          </div>
+          <div class="chart-container mt-3">
+            <canvas id="rcaChart"></canvas>
+          </div>
+          <div class="mt-2 pt-2 border-t border-slate-800/60 text-[10px] font-mono text-slate-400 flex items-center justify-between">
+            <span>Executive Business Head Reviews</span>
+            <span class="text-purple-400">Zero Recurrence Target</span>
+          </div>
+        </div>
+
+        <!-- Chart 6: UAT & Functional Release Scorecard -->
+        <div class="glass-card-inner rounded-2xl p-5 flex flex-col justify-between">
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-sm font-bold text-white flex items-center gap-2">
+                <i data-lucide="check-check" class="w-4 h-4 text-brand-400"></i>
+                UAT & Functional Release Stability
+              </h3>
+              <p class="text-[11px] text-slate-400 mt-0.5">End-to-end multi-scenario execution</p>
+            </div>
+            <span class="text-[10px] font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded font-bold">
+              0 Rollbacks
+            </span>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 my-3">
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-xl font-extrabold text-white font-mono">35+</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">UAT Scenarios</div>
+              <div class="text-[9px] text-brand-400 font-mono">100% Passed</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-xl font-extrabold text-emerald-400 font-mono">100%</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Release Health</div>
+              <div class="text-[9px] text-slate-500 font-mono">Zero Criticals</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+              <div class="text-xl font-extrabold text-accent-400 font-mono">GPT</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Support Bot</div>
+              <div class="text-[9px] text-accent-400 font-mono">Tier-1 Deflect</div>
+            </div>
+          </div>
+
+          <div class="p-2.5 rounded-xl bg-slate-900/60 border border-slate-800 text-[11px] text-slate-300 font-mono">
+            <span class="text-brand-400 font-bold">&bull; Validated Scope:</span> IT Incidents, HR Portals, Procurement Approvals, Escalation matrix logic.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 4. INTERACTIVE ITSM SIMULATOR                            -->
+  <!-- ======================================================== -->
+  <section id="simulator" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-8">
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/30 text-xs font-mono text-accent-400 mb-2">
         <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Interactive Governance Lab
       </div>
-      <h2 class="text-3xl font-bold tracking-tight text-white">
+      <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
         Live ITSM Operational Simulator
       </h2>
-      <p class="text-slate-400 text-sm mt-1">
+      <p class="text-slate-400 text-xs sm:text-sm mt-1">
         Simulate how ticket intake volume, escalation matrices, and AI deflection influence MTTR and SLA health.
       </p>
     </div>
@@ -457,9 +542,11 @@
     </div>
   </section>
 
-  <!-- Work Experience Timeline Section -->
-  <section id="experience" class="py-16 px-6 max-w-7xl mx-auto relative z-10 space-y-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+  <!-- ======================================================== -->
+  <!-- 5. WORK EXPERIENCE TIMELINE                              -->
+  <!-- ======================================================== -->
+  <section id="experience" class="py-10 px-6 max-w-[1560px] mx-auto relative z-10 space-y-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-2">
       <div>
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
           <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Career Experience
@@ -469,7 +556,7 @@
     </div>
 
     <!-- Role 1: Merck Business Services -->
-    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800">
+    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
         <div>
           <div class="flex items-center gap-2">
@@ -526,7 +613,7 @@
     </div>
 
     <!-- Role 2: Nexora Framework Transformation -->
-    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800">
+    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
         <div>
           <h3 class="text-lg sm:text-xl font-bold text-white">Enterprise ITSM Operating Model & ServiceNow Transformation</h3>
@@ -560,8 +647,8 @@
       </div>
     </div>
 
-    <!-- Role 3: Commercial Asset Development -->
-    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800">
+    <!-- Role 3: Commercial Project Coordination -->
+    <div class="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
         <div>
           <h3 class="text-lg sm:text-xl font-bold text-white">Project Coordinator</h3>
@@ -572,81 +659,15 @@
         </span>
       </div>
       <p class="text-xs sm:text-sm text-slate-300 mt-4 leading-relaxed">
-        Managed end-to-end project coordination, contractor milestone tracking, and budget allocation for a commercial infrastructure development, successfully securing a long-term tier-1 bank lease while governing contractor timelines and contract compliance across all phases.
+        Managed end-to-end project coordination, contractor milestone tracking, and budget allocation for commercial infrastructure development, successfully securing a long-term tier-1 bank lease while governing contractor timelines and contract compliance across all phases.
       </p>
     </div>
   </section>
 
-  <!-- Core Competencies Section -->
-  <section id="skills" class="py-16 px-6 max-w-7xl mx-auto relative z-10">
-    <div class="text-center max-w-3xl mx-auto mb-12">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
-        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Technical & Functional Matrix
-      </div>
-      <h2 class="text-3xl font-extrabold tracking-tight text-white">Core Competencies</h2>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
-          <i data-lucide="shield" class="w-5 h-5"></i>
-        </div>
-        <h3 class="text-base font-bold text-white">ITSM & Governance</h3>
-        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-          <li>&bull; Incident & Major Incident</li>
-          <li>&bull; Problem & Change Mgmt</li>
-          <li>&bull; Service Request Workflows</li>
-          <li>&bull; SLA Governance & Design</li>
-          <li>&bull; CSI & Standardization</li>
-        </ul>
-      </div>
-
-      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-400 flex items-center justify-center">
-          <i data-lucide="file-text" class="w-5 h-5"></i>
-        </div>
-        <h3 class="text-base font-bold text-white">Business Analysis</h3>
-        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-          <li>&bull; Requirements (BRD / FRD)</li>
-          <li>&bull; As-Is / To-Be Process Mapping</li>
-          <li>&bull; Gap & Impact Analysis</li>
-          <li>&bull; Approval Matrix Modeling</li>
-          <li>&bull; UAT Test Plan Execution</li>
-        </ul>
-      </div>
-
-      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
-          <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
-        </div>
-        <h3 class="text-base font-bold text-white">Data Analytics & BI</h3>
-        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-          <li>&bull; ServiceNow Performance Analytics</li>
-          <li>&bull; Power BI (DAX, Modeling)</li>
-          <li>&bull; SQL (Complex Queries, Joins)</li>
-          <li>&bull; MTTR & FCR Trend Models</li>
-          <li>&bull; Advanced Excel Pivots</li>
-        </ul>
-      </div>
-
-      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
-          <i data-lucide="bot" class="w-5 h-5"></i>
-        </div>
-        <h3 class="text-base font-bold text-white">Automation & Tools</h3>
-        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
-          <li>&bull; ServiceNow Platform Config</li>
-          <li>&bull; Microsoft Power Automate</li>
-          <li>&bull; Python Data Processing</li>
-          <li>&bull; Custom Support Bot Engine</li>
-          <li>&bull; Automated Breach Triggers</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education & Certifications -->
-  <section class="py-16 px-6 max-w-7xl mx-auto relative z-10">
+  <!-- ======================================================== -->
+  <!-- 6. EDUCATION & CERTIFICATIONS                            -->
+  <!-- ======================================================== -->
+  <section class="py-10 px-6 max-w-[1560px] mx-auto relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
         <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-4">
@@ -710,8 +731,10 @@
     </div>
   </section>
 
-  <!-- Contact CTA -->
-  <section class="py-16 px-6 max-w-7xl mx-auto relative z-10 text-center">
+  <!-- ======================================================== -->
+  <!-- 7. CONTACT SECTION                                       -->
+  <!-- ======================================================== -->
+  <section class="py-14 px-6 max-w-[1560px] mx-auto relative z-10 text-center">
     <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800 max-w-3xl mx-auto space-y-6">
       <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
         Let's Connect for ITSM & Business Analysis Roles
@@ -736,7 +759,7 @@
   </footer>
 
   <!-- ======================================================== -->
-  <!-- CHART SCRIPTS & SIMULATOR LOGIC                          -->
+  <!-- SCRIPTS: LUCIDE, CHART CONFIGS & SIMULATOR LOGIC         -->
   <!-- ======================================================== -->
   <script>
     // Initialize Lucide Icons
@@ -751,7 +774,7 @@
     new Chart(document.getElementById('feedbackChart'), {
       type: 'line',
       data: {
-        labels: ['M1', 'M2', 'M3 (Trigger Launch)', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9'],
+        labels: ['M1', 'M2', 'M3 (Trigger)', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9'],
         datasets: [{
           label: 'Monthly Feedback Volume',
           data: [168, 172, 170, 220, 255, 280, 298, 308, 312],
@@ -812,7 +835,7 @@
         plugins: {
           legend: {
             position: 'bottom',
-            labels: { boxWidth: 10, padding: 12, color: '#cbd5e1' }
+            labels: { boxWidth: 10, padding: 10, color: '#cbd5e1' }
           },
           tooltip: {
             callbacks: {
@@ -820,7 +843,7 @@
             }
           }
         },
-        cutout: '70%'
+        cutout: '68%'
       }
     });
 
@@ -831,13 +854,13 @@
         labels: ['> 30 Days (Critical)', '15–30 Days', '7–14 Days', '< 7 Days (Fresh)'],
         datasets: [
           {
-            label: 'Pre-Escalation Controls',
+            label: 'Pre-Controls',
             data: [45, 68, 92, 110],
             backgroundColor: 'rgba(244, 63, 94, 0.65)',
             borderRadius: 4
           },
           {
-            label: 'Post-Escalation Matrix (-20%)',
+            label: 'Post-Matrix (-20%)',
             data: [36, 54, 105, 135],
             backgroundColor: 'rgba(16, 185, 129, 0.85)',
             borderRadius: 4
@@ -868,13 +891,13 @@
         labels: ['Data Extract', 'Reconciliation', 'Deck Prep', 'Weekly Total'],
         datasets: [
           {
-            label: 'Manual Reporting (Hours)',
+            label: 'Manual (Hours)',
             data: [2.5, 2.0, 1.7, 6.2],
             backgroundColor: 'rgba(148, 163, 184, 0.5)',
             borderRadius: 4
           },
           {
-            label: 'Automated ServiceNow PA (Hours)',
+            label: 'ServiceNow PA (Hours)',
             data: [0.2, 0.2, 0.5, 0.9],
             backgroundColor: 'rgba(234, 179, 8, 0.85)',
             borderRadius: 4
@@ -893,7 +916,7 @@
         scales: {
           y: {
             grid: { color: 'rgba(255,255,255,0.05)' },
-            title: { display: true, text: 'Hours per Week', color: '#64748b' }
+            title: { display: true, text: 'Hours / Week', color: '#64748b' }
           },
           x: { grid: { color: 'rgba(255,255,255,0.02)' } }
         }
@@ -904,7 +927,7 @@
     new Chart(document.getElementById('rcaChart'), {
       type: 'bar',
       data: {
-        labels: ['Access & Permissions', 'Integration / Sync', 'Process Approval', 'Knowledge Gaps'],
+        labels: ['Access / Permissions', 'Sync Drops', 'Process Approval', 'Knowledge Gaps'],
         datasets: [{
           label: '% of 300+ Tickets',
           data: [38, 26, 21, 15],

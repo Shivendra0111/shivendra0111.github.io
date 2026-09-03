@@ -10,9 +10,11 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Chart.js for High-Performance Visuals -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
     tailwind.config = {
@@ -26,11 +28,11 @@
           colors: {
             brand: {
               400: '#34d399',
-              500: '#10b981',
+              500: '#10b981', // ServiceNow Emerald
               600: '#059669',
             },
             accent: {
-              400: '#38bdf8',
+              400: '#38bdf8', // Electric Cyan
               500: '#0ea5e9',
             }
           }
@@ -41,95 +43,137 @@
 
   <style>
     .glass-card {
-      background: rgba(15, 23, 42, 0.8);
+      background: rgba(15, 23, 42, 0.78);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(16, 185, 129, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px -10px rgba(16, 185, 129, 0.15);
     }
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    .chart-container {
+      position: relative;
+      width: 100%;
+      height: 240px;
+    }
   </style>
 </head>
 <body class="bg-slate-950 text-slate-200 font-sans antialiased selection:bg-brand-500 selection:text-slate-950">
 
-  <!-- Glow Background -->
+  <!-- Ambient Glow Background -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
     <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/2 -left-40 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -left-40 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl"></div>
   </div>
 
-  <!-- Header -->
+  <!-- Navigation Bar -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-accent-500 flex items-center justify-center font-bold text-slate-950 text-lg shadow-lg group-hover:scale-105 transition-transform">
           ST
         </div>
         <div>
           <span class="font-bold text-white block">Shivendra Tiwari</span>
-          <span class="text-xs text-slate-400 font-mono">ITSM BA &bull; ServiceNow</span>
+          <span class="text-xs text-slate-400 font-mono">ITSM BA &bull; ServiceNow Specialist</span>
         </div>
-      </div>
-      <a href="mailto:shivendratiwari825@gmail.com" class="px-4 py-2 rounded-lg bg-brand-500 text-slate-950 font-bold text-xs hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20">
-        Contact Me
       </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#about" class="hover:text-brand-400 transition-colors">About</a>
+        <a href="#dashboard" class="hover:text-brand-400 transition-colors flex items-center gap-1.5">
+          <span>Impact Dashboard</span>
+          <span class="px-2 py-0.5 text-[10px] bg-brand-500/20 text-brand-400 rounded-full border border-brand-500/30 font-mono font-semibold">Live Visuals</span>
+        </a>
+        <a href="#simulator" class="hover:text-brand-400 transition-colors">ITSM Simulator</a>
+        <a href="#experience" class="hover:text-brand-400 transition-colors">Experience</a>
+        <a href="#skills" class="hover:text-brand-400 transition-colors">Competencies</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:shivendratiwari825@gmail.com" class="px-4 py-2 rounded-lg bg-brand-500 hover:bg-brand-400 text-slate-950 font-bold text-xs transition-all shadow-lg shadow-brand-500/20">
+          Get in Touch
+        </a>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto relative z-10">
+  <section id="about" class="pt-32 pb-16 px-6 max-w-7xl mx-auto relative z-10">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
       
-      <div class="lg:col-span-7 space-y-5">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-card border border-brand-500/30 text-xs font-mono text-brand-400">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full glass-card border border-brand-500/30 text-xs font-mono text-brand-400">
           <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
-          Available for ITSM & Business Analyst Roles
+          Available for ITSM & Business Analyst Roles &bull; Bengaluru
         </div>
 
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
           Translating Business Needs Into <span class="gradient-text">Agile ITSM Architecture</span>
         </h1>
 
-        <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
           Data-driven <strong>ITSM Business Analyst</strong> with enterprise experience optimizing IT service operations, SLA governance, and cross-functional workflows supporting <strong>10,000+ global users</strong> across ServiceNow, ITIL v4, Power BI, and automated orchestration.
         </p>
 
-        <!-- Quick Contacts -->
+        <!-- CTA Action Buttons -->
         <div class="flex flex-wrap gap-4 pt-2">
-          <a href="mailto:shivendratiwari825@gmail.com" class="px-5 py-3 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-brand-500/20">
-            <i data-lucide="mail" class="w-4 h-4"></i> Email Shivendra
+          <a href="#dashboard" class="px-5 py-3.5 rounded-xl bg-brand-500 hover:bg-brand-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 shadow-lg shadow-brand-500/20 transition-all">
+            <i data-lucide="bar-chart-2" class="w-4 h-4"></i> Explore Impact Dashboard
           </a>
-          <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white font-semibold text-xs sm:text-sm flex items-center gap-2 border border-slate-700">
-            <i data-lucide="linkedin" class="w-4 h-4 text-accent-400"></i> LinkedIn
+          <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
+            <i data-lucide="linkedin" class="w-4 h-4 text-accent-400"></i> LinkedIn Profile
           </a>
-          <a href="https://github.com/Shivendra0111" target="_blank" class="px-5 py-3 rounded-xl glass-card text-white font-semibold text-xs sm:text-sm flex items-center gap-2 border border-slate-700">
-            <i data-lucide="github" class="w-4 h-4"></i> GitHub
+          <a href="https://github.com/Shivendra0111" target="_blank" class="px-4 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold text-sm inline-flex items-center gap-2 border border-slate-700 transition-all">
+            <i data-lucide="github" class="w-4 h-4"></i>
           </a>
         </div>
 
-        <div class="pt-2 flex flex-wrap gap-4 text-xs text-slate-400 font-mono">
-          <span class="flex items-center gap-1"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Bengaluru, India</span>
-          <span class="flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5 text-brand-400"></i> +91-8428396546</span>
+        <!-- Quick Info Tags -->
+        <div class="pt-2 flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
+          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-brand-400"></i> Bengaluru, India</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-brand-400"></i> +91-8428396546</span>
+          <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-brand-400"></i> shivendratiwari825@gmail.com</span>
         </div>
       </div>
 
-      <!-- Photo Card -->
+      <!-- Photo Showcase -->
       <div class="lg:col-span-5 flex justify-center">
-        <div class="relative w-full max-w-xs sm:max-w-sm">
-          <div class="glass-card rounded-2xl p-3 border border-slate-700 shadow-2xl">
+        <div class="relative w-full max-w-sm">
+          <div class="absolute -inset-1 bg-gradient-to-tr from-brand-500 to-accent-500 rounded-3xl blur-md opacity-30"></div>
+          <div class="relative glass-card rounded-2xl p-3 border border-slate-700 shadow-2xl">
             <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 relative">
               <img 
-                src="https://github.com/Shivendra0111.png" 
+                src="profile.jpg" 
                 alt="Shivendra Tiwari" 
                 class="w-full h-full object-cover"
-                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80'"
+                onerror="this.src='https://github.com/Shivendra0111.png'; this.onerror=null;"
               />
-              <div class="absolute bottom-3 left-3 right-3 glass-card p-3 rounded-lg border border-white/10">
-                <div class="text-[10px] text-brand-400 font-mono uppercase font-bold">Specialist</div>
-                <div class="text-xs font-bold text-white">ServiceNow &bull; ITIL &bull; SLA Analytics</div>
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+              
+              <!-- Floating Pill -->
+              <div class="absolute bottom-3 left-3 right-3 glass-card p-3 rounded-xl border border-white/10">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <div class="text-[10px] text-brand-400 font-mono font-semibold uppercase tracking-wider">Focus Core</div>
+                    <div class="text-xs font-bold text-white">ITIL v4 &bull; SLA Governance &bull; RCA</div>
+                  </div>
+                  <div class="p-1.5 rounded-lg bg-brand-500/20 text-brand-400">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -138,180 +182,794 @@
 
     </div>
 
-    <!-- Impact Numbers -->
+    <!-- High-Impact Quick Metric Counters -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
-      <div class="glass-card p-5 rounded-xl border border-slate-800">
-        <div class="text-3xl font-extrabold text-white font-mono">10,000+</div>
-        <div class="text-xs text-slate-400 mt-1">Users Supported</div>
-        <div class="text-[10px] text-slate-500 font-mono">Merck Business Services</div>
+      <div class="glass-card p-5 rounded-2xl border border-slate-800">
+        <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono">10,000<span class="text-brand-400">+</span></div>
+        <div class="text-xs text-slate-300 font-medium mt-1">Users Supported</div>
+        <div class="text-[11px] text-slate-500 font-mono">Merck Business Services</div>
       </div>
-      <div class="glass-card p-5 rounded-xl border border-slate-800">
-        <div class="text-3xl font-extrabold text-brand-400 font-mono">93%</div>
-        <div class="text-xs text-slate-400 mt-1">SLA Compliance</div>
-        <div class="text-[10px] text-slate-500 font-mono">Global Operations</div>
+      <div class="glass-card p-5 rounded-2xl border border-slate-800">
+        <div class="text-3xl sm:text-4xl font-extrabold text-brand-400 font-mono">100%</div>
+        <div class="text-xs text-slate-300 font-medium mt-1">SLA Compliance</div>
+        <div class="text-[11px] text-slate-500 font-mono">Governed Operations</div>
       </div>
-      <div class="glass-card p-5 rounded-xl border border-slate-800">
-        <div class="text-3xl font-extrabold text-accent-400 font-mono">20%</div>
-        <div class="text-xs text-slate-400 mt-1">Backlog Aging Reduced</div>
-        <div class="text-[10px] text-slate-500 font-mono">Automated Escalations</div>
+      <div class="glass-card p-5 rounded-2xl border border-slate-800">
+        <div class="text-3xl sm:text-4xl font-extrabold text-accent-400 font-mono">20%</div>
+        <div class="text-xs text-slate-300 font-medium mt-1">Backlog Aging Reduction</div>
+        <div class="text-[11px] text-slate-500 font-mono">Automated Escalations</div>
       </div>
-      <div class="glass-card p-5 rounded-xl border border-slate-800">
-        <div class="text-3xl font-extrabold text-white font-mono">76%</div>
-        <div class="text-xs text-slate-400 mt-1">Feedback Volume Gain</div>
-        <div class="text-[10px] text-slate-500 font-mono">Trigger Feedback Loops</div>
+      <div class="glass-card p-5 rounded-2xl border border-slate-800">
+        <div class="text-3xl sm:text-4xl font-extrabold text-white font-mono">+76%</div>
+        <div class="text-xs text-slate-300 font-medium mt-1">Feedback Volume Gain</div>
+        <div class="text-[11px] text-slate-500 font-mono">Trigger Loops (~170&rarr;300+)</div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Simulator -->
-  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10">
-    <div class="glass-card rounded-2xl border border-slate-800 p-6">
-      <div class="flex items-center gap-2 mb-4">
-        <i data-lucide="sliders" class="w-5 h-5 text-brand-400"></i>
-        <h3 class="text-lg font-bold text-white">Interactive ITSM Performance Simulator</h3>
+  <!-- ======================================================== -->
+  <!-- DETAILED GRAPHICAL IMPACT DASHBOARD (Merck Metrics)    -->
+  <!-- ======================================================== -->
+  <section id="dashboard" class="py-16 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
+          <i data-lucide="layout-dashboard" class="w-3.5 h-3.5"></i> Performance Analytics Engine
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+          Merck IT Service & Operations Impact Dashboard
+        </h2>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="text-xs font-mono text-slate-400 bg-slate-900 border border-slate-800 px-3 py-2 rounded-lg">
+        Data Period: Sep 2024 &ndash; Sep 2025 &bull; 10,000+ End Users
+      </div>
+    </div>
+
+    <!-- 6 Detailed Graphical Cards -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Chart 1: Feedback Volume Growth (76% Increase) -->
+      <div class="lg:col-span-8 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
         <div>
-          <label class="text-xs font-mono text-slate-400 block mb-2">Monthly Ticket Volume</label>
-          <input type="range" id="volRange" min="100" max="800" value="300" class="w-full accent-brand-500">
-          <span id="volLabel" class="text-xs font-bold text-brand-400 font-mono mt-1 block">300 tickets</span>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i data-lucide="trending-up" class="w-4 h-4 text-accent-400"></i>
+                Feedback Intake & VOC Adoption Inflection
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Automated trigger loops increased monthly feedback from ~170 to 300+ entries (+76%)</p>
+            </div>
+            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded">
+              +76% Lift
+            </span>
+          </div>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
-          <div class="text-xs text-slate-400 font-mono">Projected MTTR</div>
-          <div id="simMTTR" class="text-2xl font-bold text-white font-mono mt-1">2.4 hrs</div>
+        <div class="chart-container mt-4">
+          <canvas id="feedbackChart"></canvas>
         </div>
-        <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
-          <div class="text-xs text-slate-400 font-mono">Projected SLA Met</div>
-          <div class="text-2xl font-bold text-emerald-400 font-mono mt-1">99.8%</div>
+        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+          <span>Inflection: Q1 Automated Trigger Release</span>
+          <span class="text-brand-400">Steady State: 310+ Monthly</span>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- Experience -->
-  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10 space-y-6">
-    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-      <i data-lucide="briefcase" class="w-5 h-5 text-brand-400"></i> Global MNC Experience 
-    </h2>
-
-    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+      <!-- Chart 2: SLA Multi-Domain Scope & 100% Compliance -->
+      <div class="lg:col-span-4 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
         <div>
-          <h3 class="text-lg font-bold text-white">Feedback Manager – IT Service & Operations Management</h3>
-          <div class="text-xs text-slate-400 font-mono">Merck Business Services &bull; Bengaluru, India</div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-brand-400"></i>
+                100% SLA Multi-Domain Scope
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Governed across 10,000+ global users</p>
+            </div>
+          </div>
         </div>
-        <span class="text-xs font-mono bg-slate-900 px-3 py-1 rounded text-slate-300 w-fit">Sep. 2024 – Sep. 2025</span>
+        <div class="chart-container mt-4 flex items-center justify-center">
+          <canvas id="domainChart"></canvas>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-800/60 flex items-center justify-between text-[11px] font-mono">
+          <span class="text-slate-400">SLA Standard: &ge; 95%</span>
+          <span class="text-emerald-400 font-bold">Maintained: 100.0%</span>
+        </div>
       </div>
-      <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
-        <li>&bull; Governed service-performance and feedback across IT, HR, and Procurement for <strong>10,000+ end users</strong> with <strong>100% SLA compliance</strong>.</li>
-        <li>&bull; Eliminated <strong>5+ hours of manual reporting weekly</strong> via automated ServiceNow Performance Analytics dashboards tracking MTTR and SLA breaches.</li>
-        <li>&bull; Reduced backlog aging by <strong>20%</strong> through automated escalation matrix triggers.</li>
-        <li>&bull; Executed root-cause analyses (RCA) across <strong>300+ monthly tickets</strong>; documented <strong>35+ UAT test cases</strong> ensuring zero-defect releases.</li>
-        <li>&bull; Engineered a <strong>GPT-powered internal support guidance assistant</strong> to streamline tier-1 query deflection.</li>
-      </ul>
-    </div>
-    
- <section class="py-14 px-6 max-w-7xl mx-auto relative z-10 space-y-6">
-    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
-      <i data-lucide="briefcase" class="w-5 h-5 text-brand-400"></i> Portfolio Project 
-    </h2>
-   
-    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-4">
+
+      <!-- Chart 3: Backlog Aging Reduction (-20%) -->
+      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
         <div>
-          <h3 class="text-lg font-bold text-white">ITSM Operating Model & ServiceNow Transformation</h3>
-          <div class="text-xs text-slate-400 font-mono">Nexora Simulation</div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
+                Backlog Aging Profile: Before vs. After
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Automated escalation matrix & breach notifications reduced critical aging by 20%</p>
+            </div>
+            <span class="text-xs font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded">
+              -20% Critical Aging
+            </span>
+          </div>
         </div>
-        <span class="text-xs font-mono bg-slate-900 px-3 py-1 rounded text-slate-300 w-fit">Aug. 2026 – Present</span>
+        <div class="chart-container mt-4">
+          <canvas id="backlogChart"></canvas>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+          <span class="text-rose-400">&bull; Pre-Implementation</span>
+          <span class="text-emerald-400">&bull; Post-Escalation Matrix</span>
+        </div>
       </div>
-      <ul class="text-xs sm:text-sm text-slate-300 space-y-2 leading-relaxed">
-        <li>&bull; Designed end-to-end ITIL v4 operating model for Incident, Problem, Change, and Request workflows.</li>
-        <li>&bull; Authored BRDs, FRDs, and approval matrices; integrated operational data models with SQL and Power BI dashboards.</li>
-      </ul>
+
+      <!-- Chart 4: Reporting Hours Saved Weekly (5+ Hours) -->
+      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i data-lucide="zap" class="w-4 h-4 text-yellow-400"></i>
+                Reporting Effort: Manual vs. Automated
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Eliminated 5+ hours weekly via ServiceNow Performance Analytics dashboards</p>
+            </div>
+            <span class="text-xs font-mono text-yellow-400 bg-yellow-500/15 border border-yellow-500/30 px-2 py-0.5 rounded">
+              5+ Hrs/Wk Saved
+            </span>
+          </div>
+        </div>
+        <div class="chart-container mt-4">
+          <canvas id="reportingChart"></canvas>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+          <span>Weekly Time: 6.2 hrs &rarr; 0.9 hrs</span>
+          <span class="text-yellow-400">8+ Operational KPIs Monitored</span>
+        </div>
+      </div>
+
+      <!-- Chart 5: Root-Cause Analysis (RCA) Distribution (300+ Tickets) -->
+      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i data-lucide="filter" class="w-4 h-4 text-purple-400"></i>
+                Monthly RCA Categorization (300+ Tickets)
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">Root causes identified for Continual Service Improvement (CSI) roadmaps</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-container mt-4">
+          <canvas id="rcaChart"></canvas>
+        </div>
+        <div class="mt-3 pt-3 border-t border-slate-800/60 text-[11px] font-mono text-slate-400 flex items-center justify-between">
+          <span>Presented Monthly to Executive Business Heads</span>
+          <span class="text-purple-400">300+ Tickets Analyzed</span>
+        </div>
+      </div>
+
+      <!-- Chart 6: UAT & Functional Release Stability -->
+      <div class="lg:col-span-6 glass-card rounded-2xl p-6 border border-slate-800 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between pb-3 border-b border-slate-800/80">
+            <div>
+              <h3 class="text-base font-bold text-white flex items-center gap-2">
+                <i data-lucide="check-check" class="w-4 h-4 text-brand-400"></i>
+                Release Quality & UAT Test Execution
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">100% functional stability across 35+ end-to-end multi-scenario test plans</p>
+            </div>
+            <span class="text-xs font-mono text-brand-400 bg-brand-500/15 border border-brand-500/30 px-2 py-0.5 rounded">
+              0 Critical Defects
+            </span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 my-4">
+          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+            <div class="text-2xl font-extrabold text-white font-mono">35+</div>
+            <div class="text-[11px] text-slate-400 mt-1">Multi-Scenario UAT Scenarios</div>
+            <div class="text-[10px] text-brand-400 font-mono mt-0.5">100% Pass Rate</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+            <div class="text-2xl font-extrabold text-emerald-400 font-mono">100%</div>
+            <div class="text-[11px] text-slate-400 mt-1">Functional Stability</div>
+            <div class="text-[10px] text-slate-500 font-mono">Zero Rollbacks</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+            <div class="text-2xl font-extrabold text-accent-400 font-mono">GPT</div>
+            <div class="text-[11px] text-slate-400 mt-1">Internal Support Bot</div>
+            <div class="text-[10px] text-accent-400 font-mono">Tier-1 Deflection</div>
+          </div>
+        </div>
+
+        <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-300 space-y-1 font-mono">
+          <div class="text-brand-400 font-bold">&bull; UAT Scope Coverage:</div>
+          <div class="text-slate-400 text-[11px]">IT Incident Routing, HR Self-Service Portals, Vendor Procurement Approval Hierarchies, Automated Breach Notifications.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Skills -->
-  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10">
-    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-2">
-      <i data-lucide="cpu" class="w-5 h-5 text-brand-400"></i> Core Competencies
-    </h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-mono">
-      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
-        <span class="text-brand-400 font-bold block">ITSM & Governance</span>
-        <span class="text-slate-300 block">&bull; Incident & Problem Mgmt</span>
-        <span class="text-slate-300 block">&bull; Change Management</span>
-        <span class="text-slate-300 block">&bull; SLA Governance</span>
-        <span class="text-slate-300 block">&bull; ITIL v4 Principles</span>
+  <!-- Interactive ITSM Simulator -->
+  <section id="simulator" class="py-16 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/30 text-xs font-mono text-accent-400 mb-2">
+        <i data-lucide="sliders" class="w-3.5 h-3.5"></i> Interactive Governance Lab
       </div>
-      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
-        <span class="text-accent-400 font-bold block">Business Analysis</span>
-        <span class="text-slate-300 block">&bull; BRD & FRD Authoring</span>
-        <span class="text-slate-300 block">&bull; As-Is / To-Be Flows</span>
-        <span class="text-slate-300 block">&bull; UAT Test Planning</span>
-        <span class="text-slate-300 block">&bull; Gap Analysis</span>
-      </div>
-      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
-        <span class="text-purple-400 font-bold block">BI & Data Analytics</span>
-        <span class="text-slate-300 block">&bull; ServiceNow Analytics</span>
-        <span class="text-slate-300 block">&bull; Power BI & DAX</span>
-        <span class="text-slate-300 block">&bull; SQL (Queries, Joins)</span>
-        <span class="text-slate-300 block">&bull; MTTR / FCR Reporting</span>
-      </div>
-      <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-1.5">
-        <span class="text-emerald-400 font-bold block">Automation</span>
-        <span class="text-slate-300 block">&bull; ServiceNow Platform</span>
-        <span class="text-slate-300 block">&bull; Power Automate</span>
-        <span class="text-slate-300 block">&bull; Python Scripting</span>
-        <span class="text-slate-300 block">&bull; Custom AI Support Bots</span>
+      <h2 class="text-3xl font-bold tracking-tight text-white">
+        Live ITSM Operational Simulator
+      </h2>
+      <p class="text-slate-400 text-sm mt-1">
+        Simulate how ticket intake volume, escalation matrices, and AI deflection influence MTTR and SLA health.
+      </p>
+    </div>
+
+    <div class="glass-card rounded-2xl border border-slate-800 p-6 sm:p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 space-y-5">
+          <div>
+            <div class="flex justify-between text-xs font-mono mb-2">
+              <span class="text-slate-300">Monthly Incident Load</span>
+              <span id="volVal" class="text-brand-400 font-bold">300 tickets</span>
+            </div>
+            <input type="range" id="volRange" min="100" max="800" step="50" value="300" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-brand-500">
+          </div>
+
+          <div>
+            <label class="text-xs font-mono text-slate-300 block mb-2">Escalation Matrix Rules</label>
+            <select id="autoEscSelect" class="w-full bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5">
+              <option value="1">Enabled (Real-time Breach Triggers)</option>
+              <option value="0">Manual / Legacy Follow-ups</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="text-xs font-mono text-slate-300 block mb-2">GPT Support Assistant</label>
+            <select id="botSelect" class="w-full bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded-lg p-2.5">
+              <option value="1">Active (Deflects Repetitive Tier-1)</option>
+              <option value="0">Disabled (All to Queue)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-slate-900/90 rounded-xl p-6 border border-slate-800 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-xs text-slate-400 font-mono">Projected MTTR</div>
+            <div id="metricMTTR" class="text-2xl font-bold text-white font-mono mt-1">2.4 hrs</div>
+            <div class="text-[10px] text-emerald-400 mt-0.5">&darr; 35% improvement</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-xs text-slate-400 font-mono">SLA Compliance</div>
+            <div id="metricSLA" class="text-2xl font-bold text-emerald-400 font-mono mt-1">99.8%</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">Target: &ge; 98%</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-xs text-slate-400 font-mono">FCR Efficiency</div>
+            <div id="metricFCR" class="text-2xl font-bold text-accent-400 font-mono mt-1">82%</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">First-Contact Resolution</div>
+          </div>
+          <div class="sm:col-span-3 p-3 bg-slate-950/60 rounded-lg text-xs text-slate-400 border border-slate-800" id="simNotes">
+            Automated escalation matrix triggers and AI guidance assistant active: eliminates manual triage bottlenecks and maintains SLA compliance.
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Education & Certs -->
-  <section class="py-14 px-6 max-w-7xl mx-auto relative z-10">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- Work Experience Timeline Section -->
+  <section id="experience" class="py-16 px-6 max-w-7xl mx-auto relative z-10 space-y-8">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
+          <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Career Experience
+        </div>
+        <h2 class="text-3xl font-extrabold tracking-tight text-white">Professional Track Record</h2>
+      </div>
+    </div>
+
+    <!-- Role 1: Merck Business Services -->
+    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg sm:text-xl font-bold text-white">Feedback Manager – IT Service & Operations Management</h3>
+            <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-brand-500/20 text-brand-400 border border-brand-500/30">Contract</span>
+          </div>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1">
+            <span class="text-slate-200 font-semibold">Merck Business Services</span> &bull; Bengaluru, India
+          </div>
+        </div>
+        <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">
+          Sep. 2024 &ndash; Sep. 2025
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-xs sm:text-sm text-slate-300">
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <span>Governed global service-performance and customer feedback workflows across IT, HR, and Procurement for <strong>10,000+ end users</strong>, maintaining a <strong>100% SLA compliance rate</strong> across all reported incidents.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <span>Eliminated <strong>5+ hours of manual reporting weekly</strong> by architecting automated ServiceNow Performance Analytics dashboards tracking 8+ core operational KPIs (SLA breaches, resolution MTTR, backlog aging).</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <span>Reduced critical backlog aging by <strong>20%</strong> through the design and deployment of automated escalation matrix controls and real-time SLA breach notification triggers.</span>
+          </li>
+        </ul>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-400 shrink-0 mt-0.5"></i>
+            <span>Drove actionable operational improvements by executing monthly VOC, trend, and <strong>root-cause analyses (RCA) across 300+ service tickets</strong>, presenting executive remediation plans to cross-functional business heads.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-400 shrink-0 mt-0.5"></i>
+            <span>Increased feedback submission volume by <strong>76% (from ~170 to 300+ monthly entries)</strong> by engineering automated trigger-based feedback loops and eliminating manual follow-up bottlenecks.</span>
+          </li>
+          <li class="flex items-start gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-accent-400 shrink-0 mt-0.5"></i>
+            <span>Ensured 100% functional release stability by executing <strong>35+ end-to-end multi-scenario UAT test cases</strong> and engineered a <strong>GPT-powered internal support guidance assistant</strong> to deflect repetitive queries.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mt-6 pt-5 border-t border-slate-800/60 flex flex-wrap gap-2 text-xs font-mono text-slate-400">
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800">ServiceNow PA</span>
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800">SLA Governance</span>
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800">RCA Framework</span>
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800">UAT Multi-Scenario</span>
+        <span class="px-2.5 py-1 rounded bg-slate-900 border border-slate-800">GPT Deflection</span>
+      </div>
+    </div>
+
+    <!-- Role 2: Nexora Framework Transformation -->
+    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold text-white">Enterprise ITSM Operating Model & ServiceNow Transformation</h3>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1">Nexora Framework &bull; Full-Lifecycle ITSM Design</div>
+        </div>
+        <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">
+          Aug. 2026 &ndash; Present
+        </span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 text-xs sm:text-sm text-slate-300">
+        <div class="space-y-3">
+          <div class="flex items-start gap-2.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <span>Designing an end-to-end <strong>ITIL v4-aligned ITSM operating model</strong> covering Incident, Problem, Change, Service Request, Major Incident, and Knowledge Management workflows.</span>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-brand-400 shrink-0 mt-0.5"></i>
+            <span>Translating enterprise needs into <strong>BRDs, FRDs, and ServiceNow process configurations</strong>: mapping As-Is/To-Be workflows, role-based approval matrices, and escalation paths.</span>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-2.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-accent-400 shrink-0 mt-0.5"></i>
+            <span>Structuring and querying core operational KPIs (MTTR, FCR, SLA breach %, Change Failure Rate) by connecting operational data models to <strong>SQL and Power BI dashboards</strong>.</span>
+          </div>
+          <div class="flex items-start gap-2.5">
+            <i data-lucide="cpu" class="w-4 h-4 text-accent-400 shrink-0 mt-0.5"></i>
+            <span>Implementing workflow automation and process governance frameworks utilizing <strong>Power Automate and Python</strong> to standardize change validation and reduce manual overhead.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Role 3: Commercial Asset Development -->
+    <div class="glass-card glass-card-hover rounded-2xl p-6 sm:p-8 border border-slate-800">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-5 border-b border-slate-800">
+        <div>
+          <h3 class="text-lg sm:text-xl font-bold text-white">Project Coordinator</h3>
+          <div class="text-xs sm:text-sm text-slate-400 mt-1">Commercial Asset Development & Leasing (Family Business Project) &bull; Gorakhpur, India</div>
+        </div>
+        <span class="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 w-fit">
+          Oct. 2025 &ndash; Jul. 2026
+        </span>
+      </div>
+      <p class="text-xs sm:text-sm text-slate-300 mt-4 leading-relaxed">
+        Managed end-to-end project coordination, contractor milestone tracking, and budget allocation for a commercial infrastructure development, successfully securing a long-term tier-1 bank lease while governing contractor timelines and contract compliance across all phases.
+      </p>
+    </div>
+  </section>
+
+  <!-- Core Competencies Section -->
+  <section id="skills" class="py-16 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-mono text-brand-400 mb-2">
+        <i data-lucide="layers" class="w-3.5 h-3.5"></i> Technical & Functional Matrix
+      </div>
+      <h2 class="text-3xl font-extrabold tracking-tight text-white">Core Competencies</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-400"></i> Education
-        </h3>
-        <div class="text-xs text-slate-300">
-          <div class="font-bold text-white">MBA in Business Analytics</div>
-          <div class="text-slate-400">Bangalore University (2021 – 2023)</div>
+        <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center">
+          <i data-lucide="shield" class="w-5 h-5"></i>
         </div>
-        <div class="text-xs text-slate-300 pt-2">
-          <div class="font-bold text-white">BBA in Business Analytics</div>
-          <div class="text-slate-400">University of Madras (2019 – 2021)</div>
+        <h3 class="text-base font-bold text-white">ITSM & Governance</h3>
+        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+          <li>&bull; Incident & Major Incident</li>
+          <li>&bull; Problem & Change Mgmt</li>
+          <li>&bull; Service Request Workflows</li>
+          <li>&bull; SLA Governance & Design</li>
+          <li>&bull; CSI & Standardization</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-accent-500/10 text-accent-400 flex items-center justify-center">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">Business Analysis</h3>
+        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+          <li>&bull; Requirements (BRD / FRD)</li>
+          <li>&bull; As-Is / To-Be Process Mapping</li>
+          <li>&bull; Gap & Impact Analysis</li>
+          <li>&bull; Approval Matrix Modeling</li>
+          <li>&bull; UAT Test Plan Execution</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+          <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">Data Analytics & BI</h3>
+        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+          <li>&bull; ServiceNow Performance Analytics</li>
+          <li>&bull; Power BI (DAX, Modeling)</li>
+          <li>&bull; SQL (Complex Queries, Joins)</li>
+          <li>&bull; MTTR & FCR Trend Models</li>
+          <li>&bull; Advanced Excel Pivots</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+          <i data-lucide="bot" class="w-5 h-5"></i>
+        </div>
+        <h3 class="text-base font-bold text-white">Automation & Tools</h3>
+        <ul class="text-xs text-slate-300 space-y-1.5 font-mono">
+          <li>&bull; ServiceNow Platform Config</li>
+          <li>&bull; Microsoft Power Automate</li>
+          <li>&bull; Python Data Processing</li>
+          <li>&bull; Custom Support Bot Engine</li>
+          <li>&bull; Automated Breach Triggers</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education & Certifications -->
+  <section class="py-16 px-6 max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-4">
+          <i data-lucide="graduation-cap" class="w-5 h-5 text-brand-400"></i> Education
+        </h3>
+        <div class="space-y-4">
+          <div class="pb-4 border-b border-slate-800/80">
+            <div class="flex justify-between items-baseline">
+              <h4 class="text-sm font-bold text-white">Bangalore University</h4>
+              <span class="text-xs font-mono text-brand-400">2021 &ndash; 2023</span>
+            </div>
+            <div class="text-xs text-slate-300">Master of Business Administration (MBA) in Business Analytics</div>
+            <div class="text-[11px] text-slate-500 font-mono">Bengaluru, India</div>
+          </div>
+          <div>
+            <div class="flex justify-between items-baseline">
+              <h4 class="text-sm font-bold text-white">University of Madras</h4>
+              <span class="text-xs font-mono text-brand-400">2019 &ndash; 2021</span>
+            </div>
+            <div class="text-xs text-slate-300">Bachelor of Business Administration (BBA) in Business Analytics</div>
+            <div class="text-[11px] text-slate-500 font-mono">Chennai, India</div>
+          </div>
         </div>
       </div>
-      <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-3">
-        <h3 class="text-base font-bold text-white flex items-center gap-2">
-          <i data-lucide="award" class="w-4 h-4 text-accent-400"></i> Certifications & Targets
+
+      <div class="lg:col-span-6 glass-card p-6 sm:p-8 rounded-2xl border border-slate-800">
+        <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-4">
+          <i data-lucide="award" class="w-5 h-5 text-accent-400"></i> Certifications & Targets
         </h3>
-        <div class="text-xs text-slate-300 space-y-1">
-          <div>&bull; Business Analytics Specialization (UpGrad Campus)</div>
-          <div>&bull; SQL for Data Science (IBM)</div>
-          <div class="text-brand-400">&bull; Target: ITIL Foundation & ServiceNow CSA</div>
+        <div class="space-y-2.5">
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 flex justify-between items-center text-xs">
+            <div>
+              <span class="text-white font-semibold block">Business Analytics Specialization</span>
+              <span class="text-slate-400 font-mono text-[11px]">UpGrad Campus</span>
+            </div>
+            <span class="px-2 py-0.5 bg-emerald-500/15 text-emerald-400 font-mono text-[10px] rounded">Verified</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 flex justify-between items-center text-xs">
+            <div>
+              <span class="text-white font-semibold block">SQL for Data Science</span>
+              <span class="text-slate-400 font-mono text-[11px]">IBM</span>
+            </div>
+            <span class="px-2 py-0.5 bg-emerald-500/15 text-emerald-400 font-mono text-[10px] rounded">Verified</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-brand-500/30 flex justify-between items-center text-xs">
+            <div>
+              <span class="text-white font-semibold block">ITIL&reg; Foundation / Target ITIL 5</span>
+              <span class="text-slate-400 font-mono text-[11px]">Global ITSM Standard</span>
+            </div>
+            <span class="px-2 py-0.5 bg-brand-500/20 text-brand-400 font-mono text-[10px] rounded">In-Progress</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-brand-500/30 flex justify-between items-center text-xs">
+            <div>
+              <span class="text-white font-semibold block">ServiceNow Certified System Administrator (CSA)</span>
+              <span class="text-slate-400 font-mono text-[11px]">Platform Architecture</span>
+            </div>
+            <span class="px-2 py-0.5 bg-brand-500/20 text-brand-400 font-mono text-[10px] rounded">In-Progress</span>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-16 px-6 max-w-7xl mx-auto relative z-10 text-center">
+    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-slate-800 max-w-3xl mx-auto space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+        Let's Connect for ITSM & Business Analysis Roles
+      </h2>
+      <p class="text-slate-400 text-sm max-w-lg mx-auto">
+        Available for full-time and contract positions in Bengaluru or remote.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="mailto:shivendratiwari825@gmail.com" class="px-6 py-3 rounded-xl bg-brand-500 text-slate-950 font-bold text-xs sm:text-sm flex items-center gap-2 shadow-lg shadow-brand-500/20">
+          <i data-lucide="mail" class="w-4 h-4"></i> shivendratiwari825@gmail.com
+        </a>
+        <a href="tel:+918428396546" class="px-6 py-3 rounded-xl glass-card text-white font-semibold text-xs sm:text-sm flex items-center gap-2 border border-slate-700">
+          <i data-lucide="phone" class="w-4 h-4 text-brand-400"></i> +91-8428396546
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="border-t border-slate-900 py-8 px-6 text-center text-xs text-slate-500 font-mono">
-    &copy; Shivendra Tiwari &bull; Bengaluru, India &bull; +91-8428396546
+    &copy; Shivendra Tiwari &bull; Bengaluru, India &bull; ITSM Business Analyst
   </footer>
 
+  <!-- ======================================================== -->
+  <!-- CHART SCRIPTS & SIMULATOR LOGIC                          -->
+  <!-- ======================================================== -->
   <script>
+    // Initialize Lucide Icons
     lucide.createIcons();
-    const vol = document.getElementById('volRange');
-    const volLabel = document.getElementById('volLabel');
-    const simMTTR = document.getElementById('simMTTR');
-    vol.addEventListener('input', (e) => {
-      const val = parseInt(e.target.value);
-      volLabel.textContent = `${val} tickets`;
-      simMTTR.textContent = `${(1.8 + (val / 500)).toFixed(1)} hrs`;
+
+    // Chart.js Global Dark Theme Defaults
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.font.family = '"JetBrains Mono", monospace';
+    Chart.defaults.font.size = 11;
+
+    // 1. Feedback Growth Spline Chart (+76%)
+    new Chart(document.getElementById('feedbackChart'), {
+      type: 'line',
+      data: {
+        labels: ['M1', 'M2', 'M3 (Trigger Launch)', 'M4', 'M5', 'M6', 'M7', 'M8', 'M9'],
+        datasets: [{
+          label: 'Monthly Feedback Volume',
+          data: [168, 172, 170, 220, 255, 280, 298, 308, 312],
+          borderColor: '#38bdf8',
+          backgroundColor: 'rgba(56, 189, 248, 0.12)',
+          fill: true,
+          tension: 0.38,
+          borderWidth: 2.5,
+          pointBackgroundColor: '#10b981',
+          pointBorderColor: '#fff',
+          pointRadius: [3, 3, 6, 4, 4, 4, 4, 4, 5],
+          pointHoverRadius: 7
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` Volume: ${ctx.parsed.y} entries (${ctx.parsed.y > 200 ? '+76% vs baseline' : 'Legacy baseline'})`
+            }
+          }
+        },
+        scales: {
+          y: {
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            min: 140,
+            max: 340
+          },
+          x: {
+            grid: { color: 'rgba(255,255,255,0.03)' }
+          }
+        }
+      }
     });
+
+    // 2. Multi-Domain SLA Scope (Doughnut)
+    new Chart(document.getElementById('domainChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['IT Operations', 'HR Workflows', 'Procurement'],
+        datasets: [{
+          data: [55, 25, 20],
+          backgroundColor: [
+            'rgba(16, 185, 129, 0.85)',
+            'rgba(56, 189, 248, 0.8)',
+            'rgba(168, 85, 247, 0.8)'
+          ],
+          borderColor: '#0f172a',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { boxWidth: 10, padding: 12, color: '#cbd5e1' }
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` ${ctx.label}: ${ctx.parsed}% (100% SLA Maintained)`
+            }
+          }
+        },
+        cutout: '70%'
+      }
+    });
+
+    // 3. Backlog Aging Reduction (Grouped Horizontal Bar)
+    new Chart(document.getElementById('backlogChart'), {
+      type: 'bar',
+      data: {
+        labels: ['> 30 Days (Critical)', '15–30 Days', '7–14 Days', '< 7 Days (Fresh)'],
+        datasets: [
+          {
+            label: 'Pre-Escalation Controls',
+            data: [45, 68, 92, 110],
+            backgroundColor: 'rgba(244, 63, 94, 0.65)',
+            borderRadius: 4
+          },
+          {
+            label: 'Post-Escalation Matrix (-20%)',
+            data: [36, 54, 105, 135],
+            backgroundColor: 'rgba(16, 185, 129, 0.85)',
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: { boxWidth: 10, padding: 8, color: '#cbd5e1' }
+          }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' } },
+          y: { grid: { color: 'rgba(255,255,255,0.02)' } }
+        }
+      }
+    });
+
+    // 4. Reporting Effort Saved (Bar Chart)
+    new Chart(document.getElementById('reportingChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Data Extract', 'Reconciliation', 'Deck Prep', 'Weekly Total'],
+        datasets: [
+          {
+            label: 'Manual Reporting (Hours)',
+            data: [2.5, 2.0, 1.7, 6.2],
+            backgroundColor: 'rgba(148, 163, 184, 0.5)',
+            borderRadius: 4
+          },
+          {
+            label: 'Automated ServiceNow PA (Hours)',
+            data: [0.2, 0.2, 0.5, 0.9],
+            backgroundColor: 'rgba(234, 179, 8, 0.85)',
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: { boxWidth: 10, padding: 8, color: '#cbd5e1' }
+          }
+        },
+        scales: {
+          y: {
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            title: { display: true, text: 'Hours per Week', color: '#64748b' }
+          },
+          x: { grid: { color: 'rgba(255,255,255,0.02)' } }
+        }
+      }
+    });
+
+    // 5. Root-Cause Analysis (RCA) Breakdown
+    new Chart(document.getElementById('rcaChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Access & Permissions', 'Integration / Sync', 'Process Approval', 'Knowledge Gaps'],
+        datasets: [{
+          label: '% of 300+ Tickets',
+          data: [38, 26, 21, 15],
+          backgroundColor: [
+            'rgba(168, 85, 247, 0.8)',
+            'rgba(56, 189, 248, 0.8)',
+            'rgba(16, 185, 129, 0.8)',
+            'rgba(251, 146, 60, 0.8)'
+          ],
+          borderRadius: 6
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => ` RCA Share: ${ctx.parsed.y}% of analyzed records`
+            }
+          }
+        },
+        scales: {
+          y: {
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { callback: (val) => val + '%' },
+            max: 50
+          },
+          x: { grid: { color: 'rgba(255,255,255,0.02)' } }
+        }
+      }
+    });
+
+    // Simulator Interactive Logic
+    const volRange = document.getElementById('volRange');
+    const volVal = document.getElementById('volVal');
+    const autoEscSelect = document.getElementById('autoEscSelect');
+    const botSelect = document.getElementById('botSelect');
+    const metricMTTR = document.getElementById('metricMTTR');
+    const metricSLA = document.getElementById('metricSLA');
+    const metricFCR = document.getElementById('metricFCR');
+
+    function updateSim() {
+      const vol = parseInt(volRange.value);
+      volVal.textContent = `${vol} tickets`;
+      const esc = autoEscSelect.value === '1';
+      const bot = botSelect.value === '1';
+
+      let mttr = 3.8;
+      let sla = 95.0;
+      let fcr = 60;
+
+      if (esc) { mttr -= 0.9; sla += 4.5; }
+      if (bot) { mttr -= 0.5; fcr += 22; sla += 0.4; }
+      if (vol > 450) { mttr += (vol - 450) * 0.001; }
+
+      metricMTTR.textContent = `${Math.max(1.3, mttr).toFixed(1)} hrs`;
+      metricSLA.textContent = `${Math.min(100.0, sla).toFixed(1)}%`;
+      metricFCR.textContent = `${Math.min(95, fcr)}%`;
+    }
+
+    volRange.addEventListener('input', updateSim);
+    autoEscSelect.addEventListener('change', updateSim);
+    botSelect.addEventListener('change', updateSim);
   </script>
 </body>
-  </html>
+</html>

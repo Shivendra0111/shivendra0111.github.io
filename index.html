@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <meta name="google-site-verification" content="g5ESv0_iKxG-Mrzs31QChgVB2TTZ_9LGIjQ86xp_K8Q" />
+<meta name="google-site-verification" content="g5ESv0_iKxG-Mrzs31QChgVB2TTZ_9LGIjQ86xp_K8Q" />
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="profile.jpg">
   <link rel="apple-touch-icon" href="profile.jpg">
@@ -54,7 +54,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -71,7 +71,7 @@
             mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
           },
           colors: {
-            nxCanvas: '#0B0F19',
+            nxCanvas: '#090D16',
             nxSurface: '#111827',
             nxBorder: '#1F2937',
             nxBorderLight: '#374151',
@@ -91,40 +91,40 @@
   </script>
 
   <style>
-    body { background-color: #0B0F19; color: #F9FAFB; }
+    body { background-color: #090D16; color: #F9FAFB; overflow-x: hidden; }
     .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: #0B0F19; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #090D16; }
     .custom-scrollbar::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 4px; }
     .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #374151; }
     .tab-active { border-bottom: 2px solid #6366F1; color: #FFFFFF !important; background: rgba(99, 102, 241, 0.08); }
     .glass-card {
-      background: rgba(17, 24, 39, 0.85);
+      background: rgba(17, 24, 39, 0.9);
       backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
     .gradient-text {
       background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #38bdf8 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .chart-container { position: relative; width: 100%; height: 230px; }
+    .chart-container { position: relative; width: 100%; height: 245px; }
   </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased selection:bg-brandIndigo selection:text-white custom-scrollbar">
 
   <!-- Ambient Glow Background -->
   <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-    <div class="absolute -top-40 -right-40 w-[36rem] h-[36rem] bg-emerald-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-1/3 -left-40 w-[36rem] h-[36rem] bg-accent-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute top-2/3 right-10 w-[32rem] h-[32rem] bg-brandIndigo/10 rounded-full blur-3xl"></div>
-    <div class="absolute -bottom-40 right-1/4 w-[36rem] h-[36rem] bg-purple-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -top-40 -right-40 w-[42rem] h-[42rem] bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/3 -left-40 w-[42rem] h-[42rem] bg-cyan-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute top-2/3 right-10 w-[38rem] h-[38rem] bg-brandIndigo/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-40 right-1/4 w-[42rem] h-[42rem] bg-purple-500/10 rounded-full blur-3xl"></div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- 1. NAVIGATION BAR                                                         -->
+  <!-- 1. NAVIGATION BAR (Widescreen Edge-to-Edge)                               -->
   <!-- ========================================================================= -->
-  <header class="sticky top-0 z-50 bg-[#0B0F19]/95 backdrop-blur-md border-b border-nxBorder px-6 py-3.5">
-    <div class="max-w-[1680px] mx-auto flex items-center justify-between">
+  <header class="sticky top-0 z-50 bg-[#090D16]/95 backdrop-blur-md border-b border-nxBorder px-4 sm:px-8 py-3.5">
+    <div class="w-full max-w-[1840px] mx-auto flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-500 to-cyan-500 flex items-center justify-center font-bold text-slate-950 text-base shadow-lg group-hover:scale-105 transition-transform font-mono">
           ST
@@ -135,7 +135,7 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-xs font-mono text-slate-300">
+      <nav class="hidden md:flex items-center gap-8 text-xs font-mono text-slate-300">
         <a href="#about" class="hover:text-emerald-400 transition-colors">About</a>
         <a href="#skills" class="hover:text-emerald-400 transition-colors">Competencies</a>
         <a href="#nexora-suite" class="hover:text-indigo-400 transition-colors flex items-center gap-1.5">
@@ -157,192 +157,193 @@
     </div>
   </header>
 
-  <!-- ========================================================================= -->
-  <!-- 2. EXECUTIVE HERO SECTION                                                 -->
-  <!-- ========================================================================= -->
-  <section id="about" class="pt-24 pb-12 px-6 max-w-[1680px] mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-      
-      <div class="lg:col-span-8 space-y-6">
-        <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full glass-card border border-emerald-500/30 text-xs font-mono text-emerald-400">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          Available for Enterprise ITSM &amp; Business Analyst Roles &bull; Bengaluru, India
+  <!-- Main Unified Container: All sections share the exact same max-w-[1840px] width -->
+  <div class="w-full max-w-[1840px] mx-auto px-4 sm:px-8 space-y-12 py-8 relative z-10">
+
+    <!-- ======================================================================= -->
+    <!-- 2. EXECUTIVE HERO & 4 QUICK STATS CARDS                                -->
+    <!-- ======================================================================= -->
+    <section id="about" class="pt-6 space-y-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <div class="lg:col-span-8 space-y-5">
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-nxSurface border border-emerald-500/30 text-xs font-mono text-emerald-400">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+            Available for Enterprise ITSM &amp; Business Analyst Roles &bull; Bengaluru, India
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Translating Business Needs Into <span class="gradient-text">Agile ITSM Architecture</span>
+          </h1>
+
+          <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-4xl">
+            Data-driven <strong>ITSM Business Analyst</strong> with enterprise experience optimizing IT service operations, SLA governance, and cross-functional workflows supporting <strong>10,000+ global users</strong> across ServiceNow, ITIL v4, Power BI, and automated orchestration.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-4 pt-2 font-mono text-xs sm:text-sm">
+            <a href="#nexora-suite" class="px-5 py-3.5 rounded-xl bg-brandIndigo hover:bg-indigo-600 text-white font-bold inline-flex items-center gap-2 shadow-lg shadow-indigo-500/20 transition-all">
+              <i data-lucide="layout-grid" class="w-4 h-4"></i> Explore Nexora Analytics Suite
+            </a>
+            <a href="#merck-dashboard" class="px-5 py-3.5 rounded-xl bg-nxSurface hover:bg-slate-800 text-slate-200 font-semibold inline-flex items-center gap-2 border border-slate-700 transition-all">
+              <i data-lucide="bar-chart-2" class="w-4 h-4 text-emerald-400"></i> Merck Accomplishments
+            </a>
+            <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3.5 rounded-xl bg-nxSurface hover:bg-slate-800 text-white font-semibold inline-flex items-center gap-2 border border-slate-700 transition-all">
+              <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i> LinkedIn Profile
+            </a>
+            <a href="https://github.com/Shivendra0111" target="_blank" class="px-4 py-3.5 rounded-xl bg-nxSurface hover:bg-slate-800 text-white font-semibold inline-flex items-center gap-2 border border-slate-700 transition-all">
+              <i data-lucide="github" class="w-4 h-4"></i>
+            </a>
+          </div>
+
+          <!-- Metadata -->
+          <div class="pt-2 flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
+            <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i> Bengaluru, India</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +91-8428396546</span>
+            <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i> shivendratiwari825@gmail.com</span>
+          </div>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-          Translating Business Needs Into <span class="gradient-text">Agile ITSM Architecture</span>
-        </h1>
-
-        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-3xl">
-          Data-driven <strong>ITSM Business Analyst</strong> with enterprise experience optimizing IT service operations, SLA governance, and cross-functional workflows supporting <strong>10,000+ global users</strong> across ServiceNow, ITIL v4, Power BI, and automated orchestration.
-        </p>
-
-        <!-- CTA Buttons -->
-        <div class="flex flex-wrap gap-4 pt-2 font-mono text-xs sm:text-sm">
-          <a href="#nexora-suite" class="px-5 py-3.5 rounded-xl bg-brandIndigo hover:bg-indigo-600 text-white font-bold inline-flex items-center gap-2 shadow-lg shadow-indigo-500/20 transition-all">
-            <i data-lucide="layout-grid" class="w-4 h-4"></i> Explore Nexora Analytics Suite
-          </a>
-          <a href="#merck-dashboard" class="px-5 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-slate-200 font-semibold inline-flex items-center gap-2 border border-slate-700 transition-all">
-            <i data-lucide="bar-chart-2" class="w-4 h-4 text-emerald-400"></i> Merck Accomplishments
-          </a>
-          <a href="https://linkedin.com/in/shivendra-tiwari" target="_blank" class="px-5 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold inline-flex items-center gap-2 border border-slate-700 transition-all">
-            <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i> LinkedIn Profile
-          </a>
-          <a href="https://github.com/Shivendra0111" target="_blank" class="px-4 py-3.5 rounded-xl glass-card hover:bg-slate-800 text-white font-semibold inline-flex items-center gap-2 border border-slate-700 transition-all">
-            <i data-lucide="github" class="w-4 h-4"></i>
-          </a>
-        </div>
-
-        <!-- Contact Metadata -->
-        <div class="pt-2 flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-400 font-mono">
-          <span class="flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-emerald-400"></i> Bengaluru, India</span>
-          <span class="flex items-center gap-1.5"><i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +91-8428396546</span>
-          <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-3.5 h-3.5 text-emerald-400"></i> shivendratiwari825@gmail.com</span>
-        </div>
-      </div>
-
-      <!-- Profile Photo Card -->
-      <div class="lg:col-span-4 flex justify-center lg:justify-end">
-        <div class="relative w-full max-w-xs sm:max-w-sm">
-          <div class="absolute -inset-1 bg-gradient-to-tr from-emerald-500 via-indigo-500 to-cyan-500 rounded-3xl blur-md opacity-30"></div>
-          <div class="relative glass-card rounded-2xl p-3 border border-slate-700 shadow-2xl">
-            <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 relative">
-              <img 
-                src="profile.jpg" 
-                alt="Shivendra Tiwari" 
-                class="w-full h-full object-cover"
-                onerror="this.src='https://github.com/Shivendra0111.png'; this.onerror=null;"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
-              
-              <div class="absolute bottom-3 left-3 right-3 glass-card p-3 rounded-xl border border-white/10">
-                <div class="flex items-center justify-between">
-                  <div>
-                    <div class="text-[10px] text-emerald-400 font-mono font-semibold uppercase tracking-wider">Enterprise Focus</div>
-                    <div class="text-xs font-bold text-white font-mono">ServiceNow &bull; ITIL v4 &bull; CSDM &bull; SLA</div>
-                  </div>
-                  <div class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+        <!-- Profile Photo -->
+        <div class="lg:col-span-4 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-xs sm:max-w-sm">
+            <div class="absolute -inset-1 bg-gradient-to-tr from-emerald-500 via-indigo-500 to-cyan-500 rounded-3xl blur-md opacity-35"></div>
+            <div class="relative bg-nxSurface rounded-2xl p-3 border border-slate-700 shadow-2xl">
+              <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-900 relative">
+                <img 
+                  src="profile.jpg" 
+                  alt="Shivendra Tiwari" 
+                  class="w-full h-full object-cover"
+                  onerror="this.src='https://github.com/Shivendra0111.png'; this.onerror=null;"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent"></div>
+                
+                <div class="absolute bottom-3 left-3 right-3 bg-nxSurface/90 backdrop-blur-md p-3 rounded-xl border border-white/10">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <div class="text-[10px] text-emerald-400 font-mono font-semibold uppercase tracking-wider">Enterprise Focus</div>
+                      <div class="text-xs font-bold text-white font-mono">ServiceNow &bull; ITIL v4 &bull; CSDM &bull; SLA</div>
+                    </div>
+                    <div class="p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400">
+                      <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
 
-    </div>
-
-    <!-- Quick Metric Cards -->
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 font-mono">
-      <div class="glass-card p-5 rounded-2xl border border-nxBorder">
-        <div class="text-3xl sm:text-4xl font-extrabold text-white">10,000<span class="text-emerald-400">+</span></div>
-        <div class="text-xs text-slate-300 font-medium mt-1">Users Governed</div>
-        <div class="text-[11px] text-slate-500">Merck Business Services</div>
-      </div>
-      <div class="glass-card p-5 rounded-2xl border border-nxBorder">
-        <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400">100%</div>
-        <div class="text-xs text-slate-300 font-medium mt-1">SLA Compliance Rate</div>
-        <div class="text-[11px] text-slate-500">Global Operations</div>
-      </div>
-      <div class="glass-card p-5 rounded-2xl border border-nxBorder">
-        <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">20%</div>
-        <div class="text-xs text-slate-300 font-medium mt-1">Backlog Aging Reduced</div>
-        <div class="text-[11px] text-slate-500">Automated Escalations</div>
-      </div>
-      <div class="glass-card p-5 rounded-2xl border border-nxBorder">
-        <div class="text-3xl sm:text-4xl font-extrabold text-white">+76%</div>
-        <div class="text-xs text-slate-300 font-medium mt-1">Feedback Volume Gain</div>
-        <div class="text-[11px] text-slate-500">Trigger Loops (~170&rarr;300+)</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 3. CORE COMPETENCIES MATRIX                                               -->
-  <!-- ========================================================================= -->
-  <section id="skills" class="py-10 px-6 max-w-[1680px] mx-auto relative z-10">
-    <div class="flex items-center gap-3 mb-6">
-      <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
-        <i data-lucide="layers" class="w-5 h-5"></i>
-      </div>
-      <div>
-        <h2 class="text-2xl font-bold tracking-tight text-white">Technical &amp; Functional Matrix &bull; Core Competencies</h2>
-        <p class="text-xs text-slate-400 font-mono">Structured domain capabilities aligned to ITIL v4 and ServiceNow operating models</p>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="glass-card p-6 rounded-2xl border border-nxBorder space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
-          <i data-lucide="shield" class="w-5 h-5"></i>
+      <!-- Quick Metrics Bar (Spans 100% of the container width) -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5 font-mono w-full">
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder">
+          <div class="text-3xl sm:text-4xl font-extrabold text-white">10,000<span class="text-emerald-400">+</span></div>
+          <div class="text-xs text-slate-300 font-medium mt-1">Users Governed</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Merck Business Services</div>
         </div>
-        <h3 class="text-base font-bold text-white font-mono">ITSM &amp; Governance</h3>
-        <ul class="text-xs text-slate-300 space-y-2 font-mono">
-          <li>&bull; Incident &amp; Major Incident Mgmt</li>
-          <li>&bull; Problem &amp; Change Governance</li>
-          <li>&bull; Service Request Fulfillment</li>
-          <li>&bull; SLA Governance &amp; Contract Audits</li>
-          <li>&bull; Continual Service Improvement (CSI)</li>
-        </ul>
-      </div>
-
-      <div class="glass-card p-6 rounded-2xl border border-nxBorder space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
-          <i data-lucide="file-text" class="w-5 h-5"></i>
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder">
+          <div class="text-3xl sm:text-4xl font-extrabold text-emerald-400">100%</div>
+          <div class="text-xs text-slate-300 font-medium mt-1">SLA Compliance Rate</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Global Operations</div>
         </div>
-        <h3 class="text-base font-bold text-white font-mono">Business Analysis</h3>
-        <ul class="text-xs text-slate-300 space-y-2 font-mono">
-          <li>&bull; Requirements Gathering (BRD / FRD)</li>
-          <li>&bull; As-Is / To-Be Process Mapping</li>
-          <li>&bull; Gap &amp; System Impact Analysis</li>
-          <li>&bull; Role Approval Matrix Modeling</li>
-          <li>&bull; Multi-Scenario UAT Test Planning</li>
-        </ul>
-      </div>
-
-      <div class="glass-card p-6 rounded-2xl border border-nxBorder space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
-          <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder">
+          <div class="text-3xl sm:text-4xl font-extrabold text-cyan-400">20%</div>
+          <div class="text-xs text-slate-300 font-medium mt-1">Backlog Aging Reduced</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Automated Escalations</div>
         </div>
-        <h3 class="text-base font-bold text-white font-mono">Data Analytics &amp; BI</h3>
-        <ul class="text-xs text-slate-300 space-y-2 font-mono">
-          <li>&bull; ServiceNow Performance Analytics</li>
-          <li>&bull; Power BI (DAX, Data Modeling)</li>
-          <li>&bull; SQL (Complex Queries, Joins)</li>
-          <li>&bull; MTTR, FCR, Backlog Aging Tracking</li>
-          <li>&bull; Advanced Excel Analytics (Pivots)</li>
-        </ul>
-      </div>
-
-      <div class="glass-card p-6 rounded-2xl border border-nxBorder space-y-3">
-        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
-          <i data-lucide="bot" class="w-5 h-5"></i>
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder">
+          <div class="text-3xl sm:text-4xl font-extrabold text-white">+76%</div>
+          <div class="text-xs text-slate-300 font-medium mt-1">Feedback Volume Gain</div>
+          <div class="text-[11px] text-slate-500 mt-0.5">Trigger Loops (~170&rarr;300+)</div>
         </div>
-        <h3 class="text-base font-bold text-white font-mono">Automation &amp; Tools</h3>
-        <ul class="text-xs text-slate-300 space-y-2 font-mono">
-          <li>&bull; ServiceNow Platform Configuration</li>
-          <li>&bull; Microsoft Power Automate</li>
-          <li>&bull; Python Operational Data Processing</li>
-          <li>&bull; Custom GPT Support Bot Engine</li>
-          <li>&bull; Automated Real-Time Breach Triggers</li>
-        </ul>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========================================================================= -->
-  <!-- 4. FEATURED: NEXORA ANALYTICS SUITE (PRIMARY OPERATIONS COCKPIT)          -->
-  <!-- ========================================================================= -->
-  <section id="nexora-suite" class="py-10 px-6 max-w-[1680px] mx-auto relative z-10">
-    
-    <div class="bg-nxSurface rounded-3xl border border-indigo-500/30 shadow-2xl overflow-hidden">
+    <!-- ======================================================================= -->
+    <!-- 3. CORE COMPETENCIES MATRIX (Aligned to 100% full width)               -->
+    <!-- ======================================================================= -->
+    <section id="skills" class="space-y-4">
+      <div class="flex items-center gap-3">
+        <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+          <i data-lucide="layers" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold tracking-tight text-white">Technical &amp; Functional Matrix &bull; Core Competencies</h2>
+          <p class="text-xs text-slate-400 font-mono">Structured domain capabilities aligned to ITIL v4 and ServiceNow operating models</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 w-full">
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-mono">ITSM &amp; Governance</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-mono">
+            <li>&bull; Incident &amp; Major Incident Mgmt</li>
+            <li>&bull; Problem &amp; Change Governance</li>
+            <li>&bull; Service Request Fulfillment</li>
+            <li>&bull; SLA Governance &amp; Contract Audits</li>
+            <li>&bull; Continual Service Improvement (CSI)</li>
+          </ul>
+        </div>
+
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-mono">Business Analysis</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-mono">
+            <li>&bull; Requirements Gathering (BRD / FRD)</li>
+            <li>&bull; As-Is / To-Be Process Mapping</li>
+            <li>&bull; Gap &amp; System Impact Analysis</li>
+            <li>&bull; Role Approval Matrix Modeling</li>
+            <li>&bull; Multi-Scenario UAT Test Planning</li>
+          </ul>
+        </div>
+
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center">
+            <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-mono">Data Analytics &amp; BI</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-mono">
+            <li>&bull; ServiceNow Performance Analytics</li>
+            <li>&bull; Power BI (DAX, Data Modeling)</li>
+            <li>&bull; SQL (Complex Queries, Joins)</li>
+            <li>&bull; MTTR, FCR, Backlog Aging Tracking</li>
+            <li>&bull; Advanced Excel Analytics (Pivots)</li>
+          </ul>
+        </div>
+
+        <div class="bg-nxSurface p-6 rounded-2xl border border-nxBorder space-y-3">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center">
+            <i data-lucide="bot" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white font-mono">Automation &amp; Tools</h3>
+          <ul class="text-xs text-slate-300 space-y-2 font-mono">
+            <li>&bull; ServiceNow Platform Configuration</li>
+            <li>&bull; Microsoft Power Automate</li>
+            <li>&bull; Python Operational Data Processing</li>
+            <li>&bull; Custom GPT Support Bot Engine</li>
+            <li>&bull; Automated Real-Time Breach Triggers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 4. NEXORA ANALYTICS SUITE (MASTER RECTANGLE 1)                         -->
+    <!-- ======================================================================= -->
+    <section id="nexora-suite" class="w-full bg-nxSurface rounded-2xl border border-nxBorder shadow-2xl overflow-hidden">
       
-      <!-- Cockpit Header -->
+      <!-- Executive Header -->
       <div class="p-6 sm:p-8 border-b border-nxBorder bg-gradient-to-r from-nxCanvas via-nxSurface to-nxCanvas flex flex-col lg:flex-row lg:items-center justify-between gap-4">
         <div>
           <div class="flex items-center gap-2 mb-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-brandIndigo animate-pulse"></span>
             <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-brandIndigo/20 text-indigo-300 border border-brandIndigo/40">FLAGSHIP FEATURED PLATFORM</span>
             <span class="text-xs font-mono text-slate-400 hidden sm:inline">&bull; 500 Reconciled Records (Apr &ndash; Aug 2026)</span>
           </div>
@@ -367,12 +368,11 @@
         </div>
       </div>
 
-      <!-- Sticky Global Filter Bar -->
+      <!-- Sticky Filter Bar -->
       <div class="sticky top-[61px] z-30 bg-[#0e1422]/95 backdrop-blur-md border-b border-nxBorder px-6 py-2.5 shadow-lg">
         <div class="flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
           
           <div class="flex flex-wrap items-center gap-2.5">
-            <!-- Priority Filter Badges -->
             <div class="flex items-center gap-1 bg-nxCanvas p-1 rounded-lg border border-nxBorder">
               <span class="text-[10px] text-slate-500 uppercase px-1.5">Priority:</span>
               <button onclick="togglePriorityFilter(1)" id="pFilter-1" class="px-2 py-0.5 rounded text-[11px] font-bold transition-all bg-p1/20 text-p1 border border-p1/40">P1</button>
@@ -381,7 +381,6 @@
               <button onclick="togglePriorityFilter(4)" id="pFilter-4" class="px-2 py-0.5 rounded text-[11px] font-bold transition-all bg-p4/20 text-p4 border border-p4/40">P4</button>
             </div>
 
-            <!-- CI Dropdown -->
             <select id="filterCI" onchange="applyFilters()" class="bg-nxCanvas border border-nxBorder text-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-brandIndigo">
               <option value="ALL">All Technical CIs (5)</option>
               <option value="Nexora Web Application">Nexora Web Application</option>
@@ -391,7 +390,6 @@
               <option value="Nexora Production Load Balancer">Nexora Load Balancer</option>
             </select>
 
-            <!-- Group Dropdown -->
             <select id="filterGroup" onchange="applyFilters()" class="bg-nxCanvas border border-nxBorder text-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-brandIndigo">
               <option value="ALL">All Assignment Groups (4)</option>
               <option value="Nexora Application Operations">Application Operations</option>
@@ -400,7 +398,6 @@
               <option value="Nexora Network Operations">Network Operations</option>
             </select>
 
-            <!-- Quick Toggles -->
             <button onclick="toggleProblemOnly()" id="btnProblemOnly" class="px-2.5 py-1.5 rounded-lg border border-nxBorder bg-nxCanvas text-slate-400 hover:text-white flex items-center gap-1.5 transition-all">
               <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-problemViolet"></i>
               <span>Problem Cand. Only</span>
@@ -414,7 +411,6 @@
             </button>
           </div>
 
-          <!-- Search Box -->
           <div class="relative w-full sm:w-64">
             <i data-lucide="search" class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5"></i>
             <input 
@@ -429,8 +425,8 @@
         </div>
       </div>
 
-      <!-- 7 Tab Navigation Bar -->
-      <nav class="bg-[#0B0F19] border-b border-nxBorder px-6">
+      <!-- 7 Tab Navigation -->
+      <nav class="bg-[#090D16] border-b border-nxBorder px-6">
         <div class="flex items-center gap-1 overflow-x-auto custom-scrollbar text-xs font-mono">
           <button onclick="switchTab(1)" id="tab-1" class="px-4 py-3 text-slate-400 hover:text-slate-200 tab-active flex items-center gap-2 whitespace-nowrap transition-all">
             <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-brandIndigo"></i>
@@ -463,38 +459,38 @@
         </div>
       </nav>
 
-      <!-- Dynamic Views Container -->
+      <!-- Views Container -->
       <div class="p-6 sm:p-8 space-y-6">
 
         <!-- PAGE 1: EXECUTIVE OVERVIEW -->
         <div id="pageView-1" class="space-y-6">
           <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4 font-mono">
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Total Incidents</div>
               <div id="kpiTotal" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">500</div>
               <div class="text-[10px] text-slaMet mt-1 flex items-center gap-1">&bull; 100% Resolved</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">SLA Compliance Rate</div>
               <div id="kpiSLAComp" class="text-2xl sm:text-3xl font-extrabold text-p1 mt-1">58.6%</div>
               <div class="text-[10px] text-slate-500 mt-1">Target: 90.0% (Critical Gap)</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Total SLA Breaches</div>
               <div id="kpiSLABreach" class="text-2xl sm:text-3xl font-extrabold text-p1 mt-1">207</div>
               <div class="text-[10px] text-rose-400 mt-1">41.4% Breach Volume</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Mean Time to Resolve</div>
               <div id="kpiMTTR" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">24.4h</div>
               <div class="text-[10px] text-slate-400 mt-1">Median: 22.1h &bull; P90: 45.5h</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Major Incidents (P1/P2)</div>
               <div id="kpiMajor" class="text-2xl sm:text-3xl font-extrabold text-p2 mt-1">147</div>
               <div class="text-[10px] text-slate-400 mt-1">29 P1 &bull; 118 P2</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Problem Candidates</div>
               <div id="kpiProb" class="text-2xl sm:text-3xl font-extrabold text-problemViolet mt-1">68</div>
               <div class="text-[10px] text-problemViolet mt-1">13.6% Systemic Risks</div>
@@ -502,7 +498,7 @@
           </div>
 
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-8 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-8 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder flex items-center justify-between">
                 <div>
                   <h3 class="text-sm font-bold text-white flex items-center gap-2">
@@ -518,7 +514,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-4 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-4 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="pie-chart" class="w-4 h-4 text-p2"></i>
@@ -537,7 +533,7 @@
           </div>
 
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="server" class="w-4 h-4 text-slaMet"></i>
@@ -550,7 +546,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="users" class="w-4 h-4 text-cyan-400"></i>
@@ -568,7 +564,7 @@
         <!-- PAGE 2: INCIDENT OPS & HOTSPOTS -->
         <div id="pageView-2" class="space-y-6 hidden">
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-2xl border border-nxBorder">
+            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="bar-chart-2" class="w-4 h-4 text-p2"></i>
@@ -581,7 +577,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-2xl border border-nxBorder">
+            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="layers" class="w-4 h-4 text-brandIndigo"></i>
@@ -595,8 +591,7 @@
             </div>
           </div>
 
-          <!-- CI Health Table -->
-          <div class="bg-nxCanvas rounded-2xl border border-nxBorder p-5">
+          <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
               <div>
                 <h3 class="text-sm font-bold text-white">Visual 2.4: Configuration Item (CI) Operational Health Table</h3>
@@ -627,7 +622,7 @@
 
         <!-- PAGE 3: SLA INTELLIGENCE -->
         <div id="pageView-3" class="space-y-6 hidden">
-          <div class="bg-nxCanvas p-5 rounded-2xl border border-nxBorder grid grid-cols-2 md:grid-cols-5 gap-4 font-mono text-center">
+          <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder grid grid-cols-2 md:grid-cols-5 gap-4 font-mono text-center">
             <div class="p-3 rounded-xl bg-nxSurface border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">P1 SLA Breach Rate</div>
               <div class="text-2xl font-bold text-p1 mt-1">89.7%</div>
@@ -656,7 +651,7 @@
           </div>
 
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="check-circle" class="w-4 h-4 text-slaMet"></i>
@@ -669,7 +664,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-6 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="bar-chart" class="w-4 h-4 text-brandIndigo"></i>
@@ -683,8 +678,7 @@
             </div>
           </div>
 
-          <!-- Breach Registry Table -->
-          <div class="bg-nxCanvas rounded-2xl border border-nxBorder p-5">
+          <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
               <div>
                 <h3 class="text-sm font-bold text-white">Critical SLA Breach Registry</h3>
@@ -716,22 +710,22 @@
         <!-- PAGE 4: PROBLEM INTELLIGENCE -->
         <div id="pageView-4" class="space-y-6 hidden">
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Problem Candidates</div>
               <div class="text-3xl font-extrabold text-problemViolet mt-1">68</div>
               <div class="text-[10px] text-slate-500 mt-0.5">13.6% of Total Volume</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Major Problems (P1/P2)</div>
               <div class="text-3xl font-extrabold text-p1 mt-1">28</div>
               <div class="text-[10px] text-rose-400 mt-0.5">High Business Risk</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Top Problem CI</div>
               <div class="text-lg font-extrabold text-white mt-2 truncate">Web Application</div>
               <div class="text-[10px] text-problemViolet mt-0.5">22 Candidates</div>
             </div>
-            <div class="bg-nxCanvas p-4 rounded-xl border border-nxBorder">
+            <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Leading Reason</div>
               <div class="text-lg font-extrabold text-white mt-2 truncate">Technical RCA</div>
               <div class="text-[10px] text-slate-400 mt-0.5">48 Trigger Incidents</div>
@@ -739,7 +733,7 @@
           </div>
 
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-8 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-8 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="crosshair" class="w-4 h-4 text-problemViolet"></i>
@@ -752,7 +746,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-4 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-4 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="help-circle" class="w-4 h-4 text-brandIndigo"></i>
@@ -766,7 +760,7 @@
             </div>
           </div>
 
-          <div class="bg-nxCanvas rounded-2xl border border-nxBorder p-5">
+          <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="pb-3 border-b border-nxBorder">
               <h3 class="text-sm font-bold text-white">Problem Investigation Register (68 Records)</h3>
               <p class="text-xs text-slate-400 mt-0.5">Incidents flagged for Root Cause Analysis (RCA) and Known Error Database (KEDB) integration</p>
@@ -792,7 +786,7 @@
 
         <!-- PAGE 5: CHANGE IMPACT -->
         <div id="pageView-5" class="space-y-6 hidden">
-          <div class="bg-nxCanvas p-5 rounded-2xl border border-nxBorder grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-center">
+          <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-center">
             <div class="p-3 bg-nxSurface rounded-xl border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">Change-Linked Incidents</div>
               <div class="text-3xl font-extrabold text-changeCyan mt-1">52</div>
@@ -816,7 +810,7 @@
           </div>
 
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-7 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-7 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="alert-octagon" class="w-4 h-4 text-p1"></i>
@@ -829,7 +823,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-5 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-5 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="git-pull-request" class="w-4 h-4 text-changeCyan"></i>
@@ -843,7 +837,7 @@
             </div>
           </div>
 
-          <div class="bg-nxCanvas rounded-2xl border border-nxBorder p-5">
+          <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="pb-3 border-b border-nxBorder">
               <h3 class="text-sm font-bold text-white">Change Audit Register (52 Records)</h3>
               <p class="text-xs text-slate-400 mt-0.5">Normalized mapping of Change IDs to operational failure modes</p>
@@ -871,7 +865,7 @@
         <!-- PAGE 6: CMDB TOPOLOGY -->
         <div id="pageView-6" class="space-y-6 hidden">
           <div class="grid grid-cols-1 xl:grid-cols-12 gap-6">
-            <div class="xl:col-span-8 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-8 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="network" class="w-4 h-4 text-slaMet"></i>
@@ -932,7 +926,7 @@
               </div>
             </div>
 
-            <div class="xl:col-span-4 bg-nxCanvas p-5 rounded-2xl border border-nxBorder flex flex-col justify-between">
+            <div class="xl:col-span-4 bg-nxCanvas p-5 rounded-xl border border-nxBorder flex flex-col justify-between">
               <div class="pb-3 border-b border-nxBorder">
                 <h3 class="text-sm font-bold text-white flex items-center gap-2">
                   <i data-lucide="shield-alert" class="w-4 h-4 text-p1"></i>
@@ -965,13 +959,13 @@
                 </div>
               </div>
 
-              <button onclick="filterBySelectedCI()" class="w-full py-2 bg-brandIndigo hover:bg-indigo-600 text-white font-bold rounded-lg text-xs font-mono transition-all">
+              <button onclick="filterBySelectedCI()" class="w-full py-2.5 bg-brandIndigo hover:bg-indigo-600 text-white font-bold rounded-lg text-xs font-mono transition-all">
                 Filter Analytics to this CI
               </button>
             </div>
           </div>
 
-          <div class="bg-nxCanvas rounded-2xl border border-nxBorder p-5">
+          <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="pb-3 border-b border-nxBorder">
               <h3 class="text-sm font-bold text-white flex items-center gap-2">
                 <i data-lucide="map-pin" class="w-4 h-4 text-brandIndigo"></i>
@@ -985,9 +979,9 @@
           </div>
         </div>
 
-        <!-- PAGE 7: CSI ACTION ROADMAP -->
+        <!-- PAGE 7: CSI ROADMAP -->
         <div id="pageView-7" class="space-y-6 hidden">
-          <div class="bg-nxCanvas p-5 rounded-2xl border border-nxBorder">
+          <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
             <div class="flex items-center gap-2 text-xs font-mono text-yellow-400 mb-1">
               <i data-lucide="sparkles" class="w-4 h-4"></i>
               <span>Automated Executive Advisory Console</span>
@@ -997,7 +991,7 @@
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono">
-            <div class="bg-nxCanvas rounded-2xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
+            <div class="bg-nxCanvas rounded-xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
                   <span class="px-2 py-0.5 rounded text-[10px] bg-p1/20 text-p1 font-bold border border-p1/30">INITIATIVE 01: DATABASE RESILIENCE</span>
@@ -1022,7 +1016,7 @@
               </div>
             </div>
 
-            <div class="bg-nxCanvas rounded-2xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
+            <div class="bg-nxCanvas rounded-xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
                   <span class="px-2 py-0.5 rounded text-[10px] bg-changeCyan/20 text-changeCyan font-bold border border-changeCyan/30">INITIATIVE 02: CHANGE GOVERNANCE</span>
@@ -1047,7 +1041,7 @@
               </div>
             </div>
 
-            <div class="bg-nxCanvas rounded-2xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
+            <div class="bg-nxCanvas rounded-xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
                   <span class="px-2 py-0.5 rounded text-[10px] bg-problemViolet/20 text-problemViolet font-bold border border-problemViolet/30">INITIATIVE 03: SERVICE DESK TRIAGE</span>
@@ -1072,7 +1066,7 @@
               </div>
             </div>
 
-            <div class="bg-nxCanvas rounded-2xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
+            <div class="bg-nxCanvas rounded-xl p-6 border border-nxBorder space-y-4 flex flex-col justify-between">
               <div>
                 <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
                   <span class="px-2 py-0.5 rounded text-[10px] bg-p2/20 text-p2 font-bold border border-p2/30">INITIATIVE 04: MAJOR INCIDENT OPS</span>
@@ -1100,28 +1094,27 @@
         </div>
 
       </div>
+    </section>
 
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 5. "PROFESSIONAL ACCOMPLISHMENTS @ MERCK" DASHBOARD                       -->
-  <!-- ========================================================================= -->
-  <section id="merck-dashboard" class="py-10 px-6 max-w-[1680px] mx-auto relative z-10">
-    
-    <div class="glass-card rounded-3xl p-6 sm:p-8 lg:p-10 border border-slate-700/80 shadow-2xl relative overflow-hidden">
+    <!-- ======================================================================= -->
+    <!-- 5. "PROFESSIONAL ACCOMPLISHMENTS @ MERCK" (MASTER RECTANGLE 2)         -->
+    <!-- Exactly identical width, outer shell, and padding as Nexora above       -->
+    <!-- ======================================================================= -->
+    <section id="merck-dashboard" class="w-full bg-nxSurface rounded-2xl border border-nxBorder shadow-2xl overflow-hidden">
       
-      <!-- Cockpit Control Header -->
-      <div class="flex flex-col md:flex-row md:items-center justify-between pb-6 mb-6 border-b border-slate-800 gap-4">
+      <!-- Executive Header (Matches Nexora Header styling) -->
+      <div class="p-6 sm:p-8 border-b border-nxBorder bg-gradient-to-r from-nxCanvas via-nxSurface to-nxCanvas flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 mb-2">
-            <i data-lucide="award" class="w-3.5 h-3.5"></i> Enterprise Track Record
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">ENTERPRISE TRACK RECORD</span>
+            <span class="text-xs font-mono text-slate-400 hidden sm:inline">&bull; Sep 2024 &ndash; Sep 2025</span>
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Professional Accomplishments @ MERCK
           </h2>
           <p class="text-xs text-slate-400 font-mono mt-1">
-            IT Service &amp; Operations Management &bull; 10,000+ End Users across IT, HR &amp; Procurement &bull; Sep 2024 &ndash; Sep 2025
+            IT Service &amp; Operations Management &bull; 10,000+ End Users across IT, HR &amp; Procurement &bull; Contractual SLA Governance
           </p>
         </div>
 
@@ -1135,11 +1128,11 @@
         </div>
       </div>
 
-      <!-- 6 Charts in Widescreen 3-Column Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <!-- 6 Charts in Unified 3-Column Grid -->
+      <div class="p-6 sm:p-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
 
         <!-- Chart 1: Feedback Volume Growth (+76%) -->
-        <div class="bg-nxCanvas rounded-2xl p-5 border border-nxBorder flex flex-col justify-between">
+        <div class="bg-nxCanvas rounded-xl p-5 border border-nxBorder flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
             <div>
               <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
@@ -1161,8 +1154,8 @@
           </div>
         </div>
 
-        <!-- Chart 2: SLA Multi-Domain Scope (100% Compliance) -->
-        <div class="bg-nxCanvas rounded-2xl p-5 border border-nxBorder flex flex-col justify-between">
+        <!-- Chart 2: SLA Multi-Domain Scope -->
+        <div class="bg-nxCanvas rounded-xl p-5 border border-nxBorder flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
             <div>
               <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
@@ -1185,7 +1178,7 @@
         </div>
 
         <!-- Chart 3: Backlog Aging Reduction (-20%) -->
-        <div class="bg-nxCanvas rounded-2xl p-5 border border-nxBorder flex flex-col justify-between">
+        <div class="bg-nxCanvas rounded-xl p-5 border border-nxBorder flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
             <div>
               <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
@@ -1208,7 +1201,7 @@
         </div>
 
         <!-- Chart 4: Reporting Hours Saved Weekly -->
-        <div class="bg-nxCanvas rounded-2xl p-5 border border-nxBorder flex flex-col justify-between">
+        <div class="bg-nxCanvas rounded-xl p-5 border border-nxBorder flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
             <div>
               <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
@@ -1231,7 +1224,7 @@
         </div>
 
         <!-- Chart 5: Root-Cause Analysis (RCA) Distribution -->
-        <div class="bg-nxCanvas rounded-2xl p-5 border border-nxBorder flex flex-col justify-between">
+        <div class="bg-nxCanvas rounded-xl p-5 border border-nxBorder flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
             <div>
               <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
@@ -1254,7 +1247,7 @@
         </div>
 
         <!-- Chart 6: UAT & Functional Release Scorecard -->
-        <div class="bg-nxCanvas rounded-2xl p-5 border border-nxBorder flex flex-col justify-between">
+        <div class="bg-nxCanvas rounded-xl p-5 border border-nxBorder flex flex-col justify-between">
           <div class="flex items-center justify-between pb-3 border-b border-nxBorder">
             <div>
               <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
@@ -1292,15 +1285,13 @@
         </div>
 
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========================================================================= -->
-  <!-- 6. EDUCATION & CERTIFICATIONS                                             -->
-  <!-- ========================================================================= -->
-  <section id="education" class="py-10 px-6 max-w-[1680px] mx-auto relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-      <div class="glass-card lg:col-span-6 p-6 sm:p-8 rounded-2xl border border-nxBorder">
+    <!-- ======================================================================= -->
+    <!-- 6. EDUCATION & CERTIFICATIONS                                          -->
+    <!-- ======================================================================= -->
+    <section id="education" class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+      <div class="bg-nxSurface lg:col-span-6 p-6 sm:p-8 rounded-2xl border border-nxBorder">
         <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-4 font-mono">
           <i data-lucide="graduation-cap" class="w-5 h-5 text-emerald-400"></i> Academic Background
         </h3>
@@ -1324,7 +1315,7 @@
         </div>
       </div>
 
-      <div class="glass-card lg:col-span-6 p-6 sm:p-8 rounded-2xl border border-nxBorder">
+      <div class="bg-nxSurface lg:col-span-6 p-6 sm:p-8 rounded-2xl border border-nxBorder">
         <h3 class="text-lg font-bold text-white flex items-center gap-2 mb-4 font-mono">
           <i data-lucide="award" class="w-5 h-5 text-cyan-400"></i> Certifications &amp; Professional Targets
         </h3>
@@ -1359,30 +1350,31 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========================================================================= -->
-  <!-- 7. CONTACT CTA                                                            -->
-  <!-- ========================================================================= -->
-  <section class="py-14 px-6 max-w-[1680px] mx-auto relative z-10 text-center">
-    <div class="glass-card rounded-3xl p-8 sm:p-12 border border-nxBorder max-w-3xl mx-auto space-y-6">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-        Ready to optimize your IT Service Management?
-      </h2>
-      <p class="text-slate-400 text-sm max-w-lg mx-auto font-mono">
-        Available for full-time and contract ITSM Business Analyst opportunities in Bengaluru or remote.
-      </p>
-      <div class="flex flex-wrap justify-center gap-4 font-mono text-xs sm:text-sm">
-        <a href="mailto:shivendratiwari825@gmail.com" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold flex items-center gap-2 shadow-lg shadow-emerald-500/20 transition-all">
-          <i data-lucide="mail" class="w-4 h-4"></i> shivendratiwari825@gmail.com
-        </a>
-        <a href="tel:+918428396546" class="px-6 py-3 rounded-xl glass-card text-white font-semibold flex items-center gap-2 border border-slate-700 hover:bg-slate-800 transition-all">
-          <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> +91-8428396546
-        </a>
+    <!-- ======================================================================= -->
+    <!-- 7. CONTACT SECTION                                                     -->
+    <!-- ======================================================================= -->
+    <section class="py-6 text-center w-full">
+      <div class="bg-nxSurface rounded-3xl p-8 sm:p-12 border border-nxBorder max-w-4xl mx-auto space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+          Ready to optimize your IT Service Management?
+        </h2>
+        <p class="text-slate-400 text-sm max-w-lg mx-auto font-mono">
+          Available for full-time and contract ITSM Business Analyst opportunities in Bengaluru or remote.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 font-mono text-xs sm:text-sm">
+          <a href="mailto:shivendratiwari825@gmail.com" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold flex items-center gap-2 shadow-lg shadow-emerald-500/20 transition-all">
+            <i data-lucide="mail" class="w-4 h-4"></i> shivendratiwari825@gmail.com
+          </a>
+          <a href="tel:+918428396546" class="px-6 py-3 rounded-xl bg-nxCanvas text-white font-semibold flex items-center gap-2 border border-slate-700 hover:bg-slate-800 transition-all">
+            <i data-lucide="phone" class="w-4 h-4 text-emerald-400"></i> +91-8428396546
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
 
   <!-- Footer -->
   <footer class="border-t border-nxBorder py-8 px-6 text-center text-xs text-slate-500 font-mono">
@@ -1390,7 +1382,7 @@
   </footer>
 
   <!-- ========================================================================= -->
-  <!-- 8. INTERACTIVE INCIDENT DETAIL DRAWER (SLIDE-OVER PANEL)                   -->
+  <!-- 8. SLIDE-OVER DRAWER                                                      -->
   <!-- ========================================================================= -->
   <div id="drawerBackdrop" onclick="closeDrawer()" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity opacity-0 pointer-events-none duration-300"></div>
 
@@ -1469,7 +1461,7 @@
   </aside>
 
   <!-- ========================================================================= -->
-  <!-- 9. DETERMINISTIC 500-DATA ENGINE & CHART CONTROLLERS                      -->
+  <!-- 9. DATASETS & CHARTS SCRIPT                                               -->
   <!-- ========================================================================= -->
   <script>
     lucide.createIcons();
@@ -1508,7 +1500,6 @@
 
     const INCIDENTS = [];
 
-    // Deterministic 500 records generation
     (function generateDeterministicDataset() {
       const priorityPool = [];
       for (let i = 0; i < 29; i++) priorityPool.push(1);
@@ -1631,7 +1622,6 @@
       }
     })();
 
-    // Filter Engine
     const FilterState = {
       priorities: [1, 2, 3, 4],
       ci: "ALL",
@@ -1804,7 +1794,6 @@
       }
     }
 
-    // Page 1 Charts
     function renderPage1Charts() {
       destroyChart('chart1_trend');
       const ctxTrend = document.getElementById('chart1_trend');
@@ -1917,7 +1906,6 @@
       }
     }
 
-    // Page 2 Charts
     function renderPage2Charts() {
       destroyChart('chart2_families');
       const ctxFam = document.getElementById('chart2_families');
@@ -2005,7 +1993,6 @@
       });
     }
 
-    // Page 3 Charts
     function renderPage3Charts() {
       destroyChart('chart3_compliance');
       const ctxComp = document.getElementById('chart3_compliance');
@@ -2079,7 +2066,6 @@
       });
     }
 
-    // Page 4 Charts
     function renderPage4Charts() {
       destroyChart('chart4_bubble');
       const ctxBubble = document.getElementById('chart4_bubble');
@@ -2151,7 +2137,6 @@
       });
     }
 
-    // Page 5 Charts
     function renderPage5Charts() {
       destroyChart('chart5_blast');
       const ctxBlast = document.getElementById('chart5_blast');
@@ -2227,7 +2212,6 @@
       });
     }
 
-    // Page 6 Charts
     function renderPage6Charts() {
       destroyChart('chart6_geo');
       const ctxGeo = document.getElementById('chart6_geo');
@@ -2275,7 +2259,6 @@
       }
     }
 
-    // Slide-over Drawer
     function openDrawer(incNumber) {
       const inc = INCIDENTS.find(d => d.number === incNumber);
       if (!inc) return;
@@ -2331,10 +2314,9 @@
     }
 
     // -------------------------------------------------------------
-    // 10. MERCK OPERATIONS CHARTS (BELOW NEXORA)
+    // 10. MERCK OPERATIONS CHARTS
     // -------------------------------------------------------------
     function renderMerckCharts() {
-      // Merck 1: Feedback Volume Growth
       new Chart(document.getElementById('merck_feedbackChart'), {
         type: 'line',
         data: {
@@ -2363,7 +2345,6 @@
         }
       });
 
-      // Merck 2: Multi-Domain Scope (Doughnut)
       new Chart(document.getElementById('merck_domainChart'), {
         type: 'doughnut',
         data: {
@@ -2371,7 +2352,7 @@
           datasets: [{
             data: [55, 25, 20],
             backgroundColor: ['rgba(16, 185, 129, 0.85)', 'rgba(56, 189, 248, 0.8)', 'rgba(168, 85, 247, 0.8)'],
-            borderColor: '#0f172a',
+            borderColor: '#090D16',
             borderWidth: 3
           }]
         },
@@ -2385,7 +2366,6 @@
         }
       });
 
-      // Merck 3: Backlog Aging Reduction (Grouped Horizontal Bar)
       new Chart(document.getElementById('merck_backlogChart'), {
         type: 'bar',
         data: {
@@ -2407,7 +2387,6 @@
         }
       });
 
-      // Merck 4: Reporting Effort Saved
       new Chart(document.getElementById('merck_reportingChart'), {
         type: 'bar',
         data: {
@@ -2428,7 +2407,6 @@
         }
       });
 
-      // Merck 5: Root-Cause Categorization
       new Chart(document.getElementById('merck_rcaChart'), {
         type: 'bar',
         data: {
@@ -2452,7 +2430,6 @@
       });
     }
 
-    // Initial Launch
     window.addEventListener('DOMContentLoaded', () => {
       applyFilters();
       renderMerckCharts();
@@ -2460,4 +2437,3 @@
   </script>
 </body>
 </html>
-```

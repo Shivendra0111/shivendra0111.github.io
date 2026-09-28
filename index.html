@@ -411,7 +411,7 @@
           <div class="flex items-center gap-2 mb-2">
             <span class="w-2.5 h-2.5 rounded-full bg-brandIndigo animate-pulse"></span>
             <span class="text-xs font-mono font-bold px-2.5 py-0.5 rounded bg-brandIndigo/20 text-indigo-300 border border-brandIndigo/40">FLAGSHIP FEATURED PLATFORM</span>
-            <span class="text-xs font-mono text-slate-400 hidden sm:inline">&bull; 500 Reconciled Records (Apr &ndash; Aug 2026)</span>
+            <span class="text-xs font-mono text-slate-400 hidden sm:inline">&bull; 500 Reconciled Records (May &ndash; Sep 2026)</span>
           </div>
           <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
             Nexora Analytics &mdash; ITSM Operations &amp; Continual Improvement Intelligence
@@ -452,10 +452,10 @@
 
             <select id="filterCI" onchange="applyFilters()" aria-label="Filter by Configuration Item" class="bg-nxCanvas border border-nxBorder text-slate-200 rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-brandIndigo text-xs">
               <option value="ALL">All Technical CIs (5)</option>
-              <option value="Nexora Web Application">Nexora Web Application</option>
               <option value="Nexora Production Database">Nexora Production Database</option>
-              <option value="Nexora Production Application Cluster">Nexora Application Cluster</option>
+              <option value="Nexora Web Application">Nexora Web Application</option>
               <option value="Nexora Identity/SSO">Nexora Identity/SSO</option>
+              <option value="Nexora Production Application Cluster">Nexora Application Cluster</option>
               <option value="Nexora Production Load Balancer">Nexora Load Balancer</option>
             </select>
 
@@ -470,13 +470,13 @@
             <button onclick="toggleProblemOnly()" id="btnProblemOnly" class="px-2.5 py-1.5 rounded-lg border border-nxBorder bg-nxCanvas text-slate-400 hover:text-white flex items-center gap-1.5 transition-all">
               <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-problemViolet"></i>
               <span>Problem Cand. Only</span>
-              <span class="text-[10px] bg-problemViolet/20 text-problemViolet px-1.5 py-0.2 rounded" id="cntProblemBadge">68</span>
+              <span class="text-[10px] bg-problemViolet/20 text-problemViolet px-1.5 py-0.2 rounded" id="cntProblemBadge">96</span>
             </button>
 
             <button onclick="toggleChangeOnly()" id="btnChangeOnly" class="px-2.5 py-1.5 rounded-lg border border-nxBorder bg-nxCanvas text-slate-400 hover:text-white flex items-center gap-1.5 transition-all">
               <i data-lucide="git-commit" class="w-3.5 h-3.5 text-changeCyan"></i>
               <span>Change-Linked Only</span>
-              <span class="text-[10px] bg-changeCyan/20 text-changeCyan px-1.5 py-0.2 rounded" id="cntChangeBadge">52</span>
+              <span class="text-[10px] bg-changeCyan/20 text-changeCyan px-1.5 py-0.2 rounded" id="cntChangeBadge">113</span>
             </button>
           </div>
 
@@ -540,28 +540,28 @@
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">SLA Compliance Rate</div>
-              <div id="kpiSLAComp" class="text-2xl sm:text-3xl font-extrabold text-p1 mt-1">58.6%</div>
-              <div class="text-[10px] text-slate-500 mt-1">Target: 90.0% (Critical Gap)</div>
+              <div id="kpiSLAComp" class="text-2xl sm:text-3xl font-extrabold text-slaMet mt-1">90.4%</div>
+              <div class="text-[10px] text-emerald-400 mt-1">Target: &ge; 90.0% (Compliant)</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Total SLA Breaches</div>
-              <div id="kpiSLABreach" class="text-2xl sm:text-3xl font-extrabold text-p1 mt-1">207</div>
-              <div class="text-[10px] text-rose-400 mt-1">41.4% Breach Volume</div>
+              <div id="kpiSLABreach" class="text-2xl sm:text-3xl font-extrabold text-p1 mt-1">48</div>
+              <div class="text-[10px] text-slate-400 mt-1">9.6% Breach Volume</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Mean Time to Resolve</div>
-              <div id="kpiMTTR" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">25.5h</div>
-              <div class="text-[10px] text-slate-400 mt-1">Median: 22.1h &bull; P90: 45.5h</div>
+              <div id="kpiMTTR" class="text-2xl sm:text-3xl font-extrabold text-white mt-1">6.1h</div>
+              <div class="text-[10px] text-slate-400 mt-1">Median: 2.7h &bull; P90: 17.5h</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Major Incidents (P1/P2)</div>
-              <div id="kpiMajor" class="text-2xl sm:text-3xl font-extrabold text-p2 mt-1">147</div>
-              <div class="text-[10px] text-slate-400 mt-1">29 P1 &bull; 118 P2</div>
+              <div id="kpiMajor" class="text-2xl sm:text-3xl font-extrabold text-p2 mt-1">73</div>
+              <div class="text-[10px] text-slate-400 mt-1">27 P1 &bull; 46 P2</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase tracking-wider">Problem Candidates</div>
-              <div id="kpiProb" class="text-2xl sm:text-3xl font-extrabold text-problemViolet mt-1">68</div>
-              <div class="text-[10px] text-problemViolet mt-1">13.6% Systemic Risks</div>
+              <div id="kpiProb" class="text-2xl sm:text-3xl font-extrabold text-problemViolet mt-1">96</div>
+              <div class="text-[10px] text-problemViolet mt-1">19.2% Systemic Risks (5 Clusters)</div>
             </div>
           </div>
 
@@ -571,7 +571,7 @@
                 <div>
                   <h3 class="text-sm font-bold text-white flex items-center gap-2 font-mono">
                     <i data-lucide="activity" class="w-4 h-4 text-brandIndigo"></i>
-                    Visual 1.1: Incident Inflow &amp; Rolling MTTR Trend (Apr &ndash; Aug 2026)
+                    Visual 1.1: Incident Inflow &amp; Rolling MTTR Trend (May &ndash; Sep 2026)
                   </h3>
                   <p class="text-xs text-slate-400 mt-0.5">Bi-weekly incident arrival stacked by priority vs. rolling MTTR curve</p>
                 </div>
@@ -594,8 +594,8 @@
                 <canvas id="chart1_priority"></canvas>
               </div>
               <div class="pt-3 border-t border-nxBorder text-[11px] font-mono text-slate-400 flex justify-between">
-                <span>P1: 5.8% &bull; P2: 23.6%</span>
-                <span>P3: 33.2% &bull; P4: 37.4%</span>
+                <span>P1: 5.4% &bull; P2: 9.2%</span>
+                <span>P3: 33.6% &bull; P4: 51.8%</span>
               </div>
             </div>
           </div>
@@ -693,28 +693,28 @@
           <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder grid grid-cols-2 md:grid-cols-5 gap-4 font-mono text-center">
             <div class="p-3 rounded-xl bg-nxSurface border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">P1 SLA Breach Rate</div>
-              <div class="text-2xl font-bold text-p1 mt-1">89.7%</div>
-              <div class="text-[10px] text-rose-400 mt-0.5">26 of 29 Breached (Target: 1h)</div>
+              <div class="text-2xl font-bold text-p1 mt-1">85.2%</div>
+              <div class="text-[10px] text-rose-400 mt-0.5">23 of 27 Breached (Target: 1h)</div>
             </div>
             <div class="p-3 rounded-xl bg-nxSurface border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">P2 SLA Breach Rate</div>
-              <div class="text-2xl font-bold text-p2 mt-1">66.1%</div>
-              <div class="text-[10px] text-orange-400 mt-0.5">78 of 118 Breached (Target: 8h)</div>
+              <div class="text-2xl font-bold text-p2 mt-1">23.9%</div>
+              <div class="text-[10px] text-orange-400 mt-0.5">11 of 46 Breached (Target: 8h)</div>
             </div>
             <div class="p-3 rounded-xl bg-nxSurface border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">P3 SLA Breach Rate</div>
-              <div class="text-2xl font-bold text-p3 mt-1">41.6%</div>
-              <div class="text-[10px] text-amber-400 mt-0.5">69 of 166 Breached (Target: 24h)</div>
+              <div class="text-2xl font-bold text-p3 mt-1">7.7%</div>
+              <div class="text-[10px] text-amber-400 mt-0.5">13 of 168 Breached (Target: 24h)</div>
             </div>
             <div class="p-3 rounded-xl bg-nxSurface border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">P4 SLA Breach Rate</div>
-              <div class="text-2xl font-bold text-p4 mt-1">18.2%</div>
-              <div class="text-[10px] text-blue-400 mt-0.5">34 of 187 Breached (Target: 48h)</div>
+              <div class="text-2xl font-bold text-p4 mt-1">0.4%</div>
+              <div class="text-[10px] text-emerald-400 mt-0.5">1 of 259 Breached (Target: 48h)</div>
             </div>
             <div class="p-3 rounded-xl bg-nxSurface border border-nxBorder col-span-2 md:col-span-1">
               <div class="text-[10px] text-slate-400 uppercase">Avg P1 Breach Variance</div>
-              <div class="text-2xl font-bold text-p1 mt-1">+25.4h</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">Actual: ~26.4h vs 1.0h Target</div>
+              <div class="text-2xl font-bold text-p1 mt-1">+1.08h</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Actual: ~2.08h vs 1.0h Target</div>
             </div>
           </div>
 
@@ -738,7 +738,7 @@
                   <i data-lucide="bar-chart" class="w-4 h-4 text-brandIndigo"></i>
                   Visual 3.4: Resolution Duration Distribution vs. SLA Target Thresholds
                 </h3>
-                <p class="text-xs text-slate-400 mt-0.5">Bins of 5 hours with indicators at P1 (1h), P2 (8h), P3 (24h), and P4 (48h)</p>
+                <p class="text-xs text-slate-400 mt-0.5">Bins of duration with indicators at P1 (1h), P2 (8h), P3 (24h), and P4 (48h)</p>
               </div>
               <div class="chart-container mt-4">
                 <canvas id="chart3_histogram"></canvas>
@@ -753,7 +753,7 @@
                 <h3 class="text-sm font-bold text-white font-mono">Critical SLA Breach Registry</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Click column headers to sort &bull; Showing full paginated breach records</p>
               </div>
-              <span id="breachRecordCountBadge" class="text-xs font-mono text-p1 bg-p1/10 border border-p1/30 px-2.5 py-1 rounded">207 Breached Records</span>
+              <span id="breachRecordCountBadge" class="text-xs font-mono text-p1 bg-p1/10 border border-p1/30 px-2.5 py-1 rounded">48 Breached Records</span>
             </div>
             <div class="overflow-x-auto mt-4 custom-scrollbar">
               <table class="w-full text-left text-xs font-mono">
@@ -775,10 +775,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-nxBorder gap-3 text-xs font-mono">
-              <span id="breachPaginationInfo" class="text-slate-400">Showing 1 to 10 of 207 entries</span>
+              <span id="breachPaginationInfo" class="text-slate-400">Showing 1 to 10 of 48 entries</span>
               <div class="flex items-center gap-2">
                 <button onclick="changeBreachPage(-1)" id="btnBreachPrev" class="px-3 py-1.5 rounded-lg bg-nxSurface border border-nxBorder text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed">Previous</button>
-                <span id="breachCurrentPageText" class="px-3 py-1.5 text-slate-300 bg-nxCanvas border border-nxBorder rounded-lg">Page 1 / 21</span>
+                <span id="breachCurrentPageText" class="px-3 py-1.5 text-slate-300 bg-nxCanvas border border-nxBorder rounded-lg">Page 1 / 5</span>
                 <button onclick="changeBreachPage(1)" id="btnBreachNext" class="px-3 py-1.5 rounded-lg bg-nxSurface border border-nxBorder text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed">Next</button>
               </div>
             </div>
@@ -790,23 +790,23 @@
           <div class="grid grid-cols-2 md:grid-cols-4 gap-4 font-mono">
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Problem Candidates</div>
-              <div class="text-3xl font-extrabold text-problemViolet mt-1">68</div>
-              <div class="text-[10px] text-slate-500 mt-0.5">13.6% of Total Volume</div>
+              <div class="text-3xl font-extrabold text-problemViolet mt-1">96</div>
+              <div class="text-[10px] text-slate-500 mt-0.5">19.2% of Total Volume</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Major Problems (P1/P2)</div>
-              <div class="text-3xl font-extrabold text-p1 mt-1">28</div>
-              <div class="text-[10px] text-rose-400 mt-0.5">High Business Risk</div>
+              <div class="text-3xl font-extrabold text-p1 mt-1">20</div>
+              <div class="text-[10px] text-rose-400 mt-0.5">11 P1 &bull; 9 P2 Major Problems</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Top Problem CI</div>
-              <div class="text-lg font-extrabold text-white mt-2 truncate">Web Application</div>
-              <div class="text-[10px] text-problemViolet mt-0.5">22 Candidates</div>
+              <div class="text-lg font-extrabold text-white mt-2 truncate">Production Database</div>
+              <div class="text-[10px] text-problemViolet mt-0.5">38 Candidates (DBPOOL + DBMAINT)</div>
             </div>
             <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder">
               <div class="text-[11px] text-slate-400 uppercase">Leading Reason</div>
-              <div class="text-lg font-extrabold text-white mt-2 truncate">Technical RCA</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">48 Trigger Incidents</div>
+              <div class="text-lg font-extrabold text-white mt-2 truncate">DEPLOYREG-001</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">35 Deployment Regressions</div>
             </div>
           </div>
 
@@ -830,7 +830,7 @@
                   <i data-lucide="help-circle" class="w-4 h-4 text-brandIndigo"></i>
                   Visual 4.3: Problem Justification Logic
                 </h3>
-                <p class="text-xs text-slate-400 mt-0.5">Rule 1 (Change Post-Mortem) vs. Rule 2 (Recurrent) vs. Rule 3 (Technical)</p>
+                <p class="text-xs text-slate-400 mt-0.5">Breakdown by root-cause architecture clusters</p>
               </div>
               <div class="chart-container mt-4">
                 <canvas id="chart4_reasons"></canvas>
@@ -842,10 +842,10 @@
           <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-nxBorder gap-2">
               <div>
-                <h3 class="text-sm font-bold text-white font-mono">Problem Investigation Register (68 Records)</h3>
+                <h3 class="text-sm font-bold text-white font-mono">Problem Investigation Register (96 Records)</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Incidents flagged for Root Cause Analysis (RCA) and Known Error Database (KEDB) integration</p>
               </div>
-              <span id="probRecordCountBadge" class="text-xs font-mono text-problemViolet bg-problemViolet/10 border border-problemViolet/30 px-2.5 py-1 rounded w-fit">68 Problem Candidates</span>
+              <span id="probRecordCountBadge" class="text-xs font-mono text-problemViolet bg-problemViolet/10 border border-problemViolet/30 px-2.5 py-1 rounded w-fit">96 Problem Candidates</span>
             </div>
             <div class="overflow-x-auto mt-4 custom-scrollbar">
               <table class="w-full text-left text-xs font-mono">
@@ -865,10 +865,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-nxBorder gap-3 text-xs font-mono">
-              <span id="problemPaginationInfo" class="text-slate-400">Showing 1 to 10 of 68 entries</span>
+              <span id="problemPaginationInfo" class="text-slate-400">Showing 1 to 10 of 96 entries</span>
               <div class="flex items-center gap-2">
                 <button onclick="changeProblemPage(-1)" id="btnProblemPrev" class="px-3 py-1.5 rounded-lg bg-nxSurface border border-nxBorder text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed">Previous</button>
-                <span id="problemCurrentPageText" class="px-3 py-1.5 text-slate-300 bg-nxCanvas border border-nxBorder rounded-lg">Page 1 / 7</span>
+                <span id="problemCurrentPageText" class="px-3 py-1.5 text-slate-300 bg-nxCanvas border border-nxBorder rounded-lg">Page 1 / 10</span>
                 <button onclick="changeProblemPage(1)" id="btnProblemNext" class="px-3 py-1.5 rounded-lg bg-nxSurface border border-nxBorder text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed">Next</button>
               </div>
             </div>
@@ -880,23 +880,23 @@
           <div class="bg-nxCanvas p-5 rounded-xl border border-nxBorder grid grid-cols-2 md:grid-cols-4 gap-4 font-mono text-center">
             <div class="p-3 bg-nxSurface rounded-xl border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">Change-Linked Incidents</div>
-              <div class="text-3xl font-extrabold text-changeCyan mt-1">52</div>
-              <div class="text-[10px] text-slate-500 mt-0.5">10.4% of Total Incidents</div>
+              <div class="text-3xl font-extrabold text-changeCyan mt-1">113</div>
+              <div class="text-[10px] text-slate-500 mt-0.5">22.6% of Total Incidents</div>
             </div>
             <div class="p-3 bg-nxSurface rounded-xl border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">Unique Changes Associated</div>
-              <div class="text-3xl font-extrabold text-white mt-1">25</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">CHG300001 &ndash; CHG300025</div>
+              <div class="text-3xl font-extrabold text-white mt-1">15</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">CHG-000001 &ndash; CHG-000015</div>
             </div>
             <div class="p-3 bg-nxSurface rounded-xl border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">Major Change Failures (P1/P2)</div>
-              <div class="text-3xl font-extrabold text-p1 mt-1">18</div>
-              <div class="text-[10px] text-rose-400 mt-0.5">Post-Deployment Outages</div>
+              <div class="text-3xl font-extrabold text-p1 mt-1">31</div>
+              <div class="text-[10px] text-rose-400 mt-0.5">14 P1 &bull; 17 P2 Outages</div>
             </div>
             <div class="p-3 bg-nxSurface rounded-xl border border-nxBorder">
               <div class="text-[10px] text-slate-400 uppercase">Change SLA Breach Rate</div>
-              <div class="text-3xl font-extrabold text-p2 mt-1">44.2%</div>
-              <div class="text-[10px] text-orange-400 mt-0.5">23 of 52 Breached Target</div>
+              <div class="text-3xl font-extrabold text-p2 mt-1">17.7%</div>
+              <div class="text-[10px] text-orange-400 mt-0.5">20 of 113 Breached Target</div>
             </div>
           </div>
 
@@ -920,7 +920,7 @@
                   <i data-lucide="git-pull-request" class="w-4 h-4 text-changeCyan"></i>
                   Visual 5.2: Change Sensitivity by CI
                 </h3>
-                <p class="text-xs text-slate-400 mt-0.5">Web Application and App Cluster show highest release sensitivity</p>
+                <p class="text-xs text-slate-400 mt-0.5">Breakdown of change-induced incidents by technical CI</p>
               </div>
               <div class="chart-container mt-4">
                 <canvas id="chart5_ci"></canvas>
@@ -932,10 +932,10 @@
           <div class="bg-nxCanvas rounded-xl border border-nxBorder p-5">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-nxBorder gap-2">
               <div>
-                <h3 class="text-sm font-bold text-white font-mono">Change Audit Register (52 Records)</h3>
+                <h3 class="text-sm font-bold text-white font-mono">Change Audit Register (113 Records)</h3>
                 <p class="text-xs text-slate-400 mt-0.5">Normalized mapping of Change IDs to operational failure modes</p>
               </div>
-              <span id="chgRecordCountBadge" class="text-xs font-mono text-changeCyan bg-changeCyan/10 border border-changeCyan/30 px-2.5 py-1 rounded w-fit">52 Change Incidents</span>
+              <span id="chgRecordCountBadge" class="text-xs font-mono text-changeCyan bg-changeCyan/10 border border-changeCyan/30 px-2.5 py-1 rounded w-fit">113 Change Incidents</span>
             </div>
             <div class="overflow-x-auto mt-4 custom-scrollbar">
               <table class="w-full text-left text-xs font-mono">
@@ -956,10 +956,10 @@
             </div>
 
             <div class="flex flex-col sm:flex-row items-center justify-between pt-4 border-t border-nxBorder gap-3 text-xs font-mono">
-              <span id="changePaginationInfo" class="text-slate-400">Showing 1 to 10 of 52 entries</span>
+              <span id="changePaginationInfo" class="text-slate-400">Showing 1 to 10 of 113 entries</span>
               <div class="flex items-center gap-2">
                 <button onclick="changeChangePage(-1)" id="btnChangePrev" class="px-3 py-1.5 rounded-lg bg-nxSurface border border-nxBorder text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed">Previous</button>
-                <span id="changeCurrentPageText" class="px-3 py-1.5 text-slate-300 bg-nxCanvas border border-nxBorder rounded-lg">Page 1 / 6</span>
+                <span id="changeCurrentPageText" class="px-3 py-1.5 text-slate-300 bg-nxCanvas border border-nxBorder rounded-lg">Page 1 / 12</span>
                 <button onclick="changeChangePage(1)" id="btnChangeNext" class="px-3 py-1.5 rounded-lg bg-nxSurface border border-nxBorder text-slate-300 hover:text-white disabled:opacity-40 disabled:cursor-not-allowed">Next</button>
               </div>
             </div>
@@ -1000,31 +1000,31 @@
                   <g onclick="selectCSDMNode('Nexora Identity/SSO')" class="cursor-pointer csdm-node">
                     <rect id="svg_node_sso" x="40" y="190" width="200" height="42" rx="8" fill="#111827" stroke="#3B82F6" stroke-width="1.5"/>
                     <text x="140" y="210" text-anchor="middle" fill="#FFFFFF" font-size="11" font-family="JetBrains Mono" font-weight="bold">Nexora Identity/SSO</text>
-                    <text x="140" y="224" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">78 Incidents &bull; 38% Breach</text>
+                    <text x="140" y="224" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">90 Incidents &bull; 13% Breach</text>
                   </g>
 
                   <g onclick="selectCSDMNode('Nexora Production Load Balancer')" class="cursor-pointer csdm-node">
                     <rect id="svg_node_lb" x="280" y="190" width="200" height="42" rx="8" fill="#111827" stroke="#F59E0B" stroke-width="1.5"/>
                     <text x="380" y="210" text-anchor="middle" fill="#FFFFFF" font-size="11" font-family="JetBrains Mono" font-weight="bold">Production Load Balancer</text>
-                    <text x="380" y="224" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">64 Incidents &bull; 44% Breach</text>
+                    <text x="380" y="224" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">38 Incidents &bull; 39% Breach</text>
                   </g>
 
                   <g onclick="selectCSDMNode('Nexora Web Application')" class="cursor-pointer csdm-node">
                     <rect id="svg_node_web" x="520" y="190" width="200" height="42" rx="8" fill="#111827" stroke="#EF4444" stroke-width="2"/>
                     <text x="620" y="210" text-anchor="middle" fill="#FFFFFF" font-size="11" font-family="JetBrains Mono" font-weight="bold">Nexora Web Application</text>
-                    <text x="620" y="224" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">137 Incidents &bull; 42% Breach</text>
+                    <text x="620" y="224" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">148 Incidents &bull; 6% Breach</text>
                   </g>
 
                   <g onclick="selectCSDMNode('Nexora Production Application Cluster')" class="cursor-pointer csdm-node">
                     <rect id="svg_node_cluster" x="180" y="270" width="220" height="42" rx="8" fill="#111827" stroke="#8B5CF6" stroke-width="1.5"/>
                     <text x="290" y="290" text-anchor="middle" fill="#FFFFFF" font-size="11" font-family="JetBrains Mono" font-weight="bold">Production App Cluster</text>
-                    <text x="290" y="304" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">86 Incidents &bull; 42% Breach</text>
+                    <text x="290" y="304" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">74 Incidents &bull; 8% Breach</text>
                   </g>
 
                   <g onclick="selectCSDMNode('Nexora Production Database')" class="cursor-pointer csdm-node">
                     <rect id="svg_node_db" x="430" y="270" width="220" height="42" rx="8" fill="#111827" stroke="#EF4444" stroke-width="1.5"/>
                     <text x="540" y="290" text-anchor="middle" fill="#FFFFFF" font-size="11" font-family="JetBrains Mono" font-weight="bold">Production Database</text>
-                    <text x="540" y="304" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">135 Incidents &bull; 41% Breach</text>
+                    <text x="540" y="304" text-anchor="middle" fill="#9CA3AF" font-size="9" font-family="JetBrains Mono">150 Incidents &bull; 4% Breach</text>
                   </g>
                 </svg>
               </div>
@@ -1049,17 +1049,17 @@
                 <div class="grid grid-cols-2 gap-3 text-center">
                   <div class="p-2.5 bg-nxSurface rounded-lg border border-nxBorder">
                     <div class="text-[10px] text-slate-400">Total Volume</div>
-                    <div id="csdmVol" class="text-lg font-bold text-white mt-1">137</div>
+                    <div id="csdmVol" class="text-lg font-bold text-white mt-1">148</div>
                   </div>
                   <div class="p-2.5 bg-nxSurface rounded-lg border border-nxBorder">
                     <div class="text-[10px] text-slate-400">Breach Rate</div>
-                    <div id="csdmBreach" class="text-lg font-bold text-p1 mt-1">42.3%</div>
+                    <div id="csdmBreach" class="text-lg font-bold text-p1 mt-1">6.1%</div>
                   </div>
                 </div>
 
                 <div class="p-3 bg-nxSurface rounded-lg border border-nxBorder">
                   <span class="text-slate-500 text-[10px] uppercase">Dominant Failure Mode</span>
-                  <div id="csdmCause" class="text-xs font-semibold text-slate-200 mt-1">Runtime exception &bull; Memory saturation</div>
+                  <div id="csdmCause" class="text-xs font-semibold text-slate-200 mt-1">Deployment regressions &bull; Node CPU saturation</div>
                 </div>
               </div>
 
@@ -1092,7 +1092,7 @@
               <span>Automated Executive Advisory Console</span>
             </div>
             <h3 class="text-xl font-extrabold text-white">Continual Service Improvement (CSI) &mdash; Evidence-Backed Initiatives</h3>
-            <p class="text-xs text-slate-400 mt-1 font-mono">Four non-fabricated, high-impact engineering roadmaps derived directly from the 500-incident dataset.</p>
+            <p class="text-xs text-slate-400 mt-1 font-mono">Four high-impact engineering roadmaps derived directly from the reconciled 500-incident dataset.</p>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono">
@@ -1108,8 +1108,8 @@
                 </p>
                 <div class="p-3 bg-nxSurface rounded-lg border border-nxBorder my-3 text-[11px] text-slate-400 space-y-1">
                   <div class="text-white font-bold">&bull; Empirical Evidence:</div>
-                  <div>- Nexora Production Database accounts for 135 incidents (27.0% of platform volume).</div>
-                  <div>- Connection limit saturation generated 24 discrete peak-load outages.</div>
+                  <div>- Nexora Production Database accounts for 150 incidents (30.0% of platform volume).</div>
+                  <div>- Connection limit saturation (DBPOOL-001) generated 24 peak-demand incidents.</div>
                 </div>
                 <div class="text-xs text-emerald-400 font-bold">&bull; Target Metric: -35% Database MTTR &amp; 0 Connection Saturation Incidents</div>
               </div>
@@ -1117,7 +1117,7 @@
                 <div class="text-slate-400 font-bold uppercase text-[10px]">Actionable Steps:</div>
                 <div>1. Increase connection pool max ceiling and implement idle connection eviction.</div>
                 <div>2. Offload heavy read reporting queries to dedicated read-replicas.</div>
-                <div>3. Automated DBA indexing review for top 5 slow queries identified in DB-02.</div>
+                <div>3. Automated DBA indexing review for slow queries identified in DB-02.</div>
               </div>
             </div>
 
@@ -1133,8 +1133,8 @@
                 </p>
                 <div class="p-3 bg-nxSurface rounded-lg border border-nxBorder my-3 text-[11px] text-slate-400 space-y-1">
                   <div class="text-white font-bold">&bull; Empirical Evidence:</div>
-                  <div>- 52 incidents (10.4%) have direct contributing factors tied to Changes.</div>
-                  <div>- 25 distinct changes (CHG300001&ndash;25) generated post-release defects.</div>
+                  <div>- 113 incidents (22.6%) have direct contributing factors tied to Changes.</div>
+                  <div>- 15 distinct changes (CHG-000001&ndash;15) generated post-release defects.</div>
                 </div>
                 <div class="text-xs text-emerald-400 font-bold">&bull; Target Metric: Zero P1/P2 change-induced rollbacks &amp; 50% drop in change incidents</div>
               </div>
@@ -1158,8 +1158,8 @@
                 </p>
                 <div class="p-3 bg-nxSurface rounded-lg border border-nxBorder my-3 text-[11px] text-slate-400 space-y-1">
                   <div class="text-white font-bold">&bull; Empirical Evidence:</div>
-                  <div>- Incident Triage/Assignment Routing represents 32 misassigned tickets.</div>
-                  <div>- Each misrouted incident incurred an average resolution delay of 23.1 hours.</div>
+                  <div>- Service Operations triage and misrouting represents 34 reassigned tickets.</div>
+                  <div>- Service Operations initial triage delay reached up to 168 minutes per ticket.</div>
                 </div>
                 <div class="text-xs text-emerald-400 font-bold">&bull; Target Metric: Eliminate misrouted tickets; reduce reassignment overhead to &lt;1%</div>
               </div>
@@ -1179,12 +1179,12 @@
                 </div>
                 <h4 class="text-base font-bold text-white mt-3">P1 Major Incident Cross-Functional Swarming Protocol</h4>
                 <p class="text-xs text-slate-300 mt-2 leading-relaxed">
-                  <strong class="text-slate-100">Problem Statement:</strong> P1 resolution SLA is severely compromised (89.7% contractual breach rate).
+                  <strong class="text-slate-100">Problem Statement:</strong> P1 resolution SLA is compromised by sequential engineer triage.
                 </p>
                 <div class="p-3 bg-nxSurface rounded-lg border border-nxBorder my-3 text-[11px] text-slate-400 space-y-1">
                   <div class="text-white font-bold">&bull; Empirical Evidence:</div>
-                  <div>- Average P1 resolution duration is 26.4 hours against a 1.0-hour SLA target.</div>
-                  <div>- 26 out of 29 P1 incidents breached SLA, with durations reaching 60.0 hours.</div>
+                  <div>- Average P1 resolution duration is 1.92 hours against a 1.0-hour SLA target.</div>
+                  <div>- 23 out of 27 P1 incidents breached SLA, with durations averaging 2.08 hours.</div>
                 </div>
                 <div class="text-xs text-emerald-400 font-bold">&bull; Target Metric: Achieve &gt;90% P1 SLA compliance within 90 days</div>
               </div>
@@ -1483,7 +1483,7 @@
     <div class="p-5 border-b border-nxBorder flex items-center justify-between bg-nxCanvas">
       <div class="flex items-center gap-2.5">
         <span id="drawerPriorityBadge" class="px-2 py-0.5 rounded text-xs font-bold bg-p1/20 text-p1 border border-p1/30">P1</span>
-        <span id="drawerIncNumber" class="text-base font-bold text-white">INC10018</span>
+        <span id="drawerIncNumber" class="text-base font-bold text-white">INC0015011</span>
         <span class="text-[11px] text-slate-400 font-normal">&bull; Incident Detail</span>
       </div>
       <button onclick="closeDrawer()" aria-label="Close Drawer" class="p-1.5 rounded-lg hover:bg-nxSurface text-slate-400 hover:text-white transition-colors">
@@ -1514,8 +1514,8 @@
             <div class="flex justify-between"><span class="text-slate-500">Instance:</span><span class="text-slate-300">Nexora Core - Production</span></div>
             <div class="flex justify-between"><span class="text-slate-500">Configuration Item:</span><span id="drawerCI" class="text-emerald-400 font-bold">Nexora Production Database</span></div>
             <div class="flex justify-between"><span class="text-slate-500">Assignment Group:</span><span id="drawerGroup" class="text-slate-200">Database Operations</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Assigned Engineer:</span><span id="drawerEngineer" class="text-indigo-400">Rahul Database Engineer</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Caller &amp; Location:</span><span id="drawerCaller">USR019 (Delhi)</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Assigned Engineer:</span><span id="drawerEngineer" class="text-indigo-400">Devika Rao</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Caller &amp; Location:</span><span id="drawerCaller">CALLER-0020 (Delhi)</span></div>
           </div>
         </div>
 
@@ -1523,8 +1523,8 @@
           <h3 class="text-[10px] uppercase text-slate-500 font-bold tracking-wider">Technical Classification</h3>
           <div class="p-3.5 bg-nxCanvas rounded-xl border border-nxBorder space-y-2 text-slate-300">
             <div class="flex justify-between"><span class="text-slate-500">Category:</span><span id="drawerCategory">Database</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Incident Family:</span><span id="drawerFamily" class="text-amber-400 font-semibold truncate max-w-[260px]">Database Latency</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Technical Cause:</span><span id="drawerCause" class="text-slate-200 truncate max-w-[260px]">Resource Saturation</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Incident Family:</span><span id="drawerFamily" class="text-amber-400 font-semibold truncate max-w-[260px]">Capacity / Resource Saturation</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Technical Cause:</span><span id="drawerCause" class="text-slate-200 truncate max-w-[260px]">Connection Pool Saturation</span></div>
             <div class="flex justify-between"><span class="text-slate-500">Scenario Catalog ID:</span><span id="drawerScenario" class="text-slate-400">DB-03</span></div>
             <div class="pt-2 border-t border-nxBorder text-[11px] text-slate-400" id="drawerDescription">
               Operational database connection saturation triggered by delayed index update.
@@ -1535,17 +1535,17 @@
         <div class="space-y-3">
           <h3 class="text-[10px] uppercase text-slate-500 font-bold tracking-wider">Timeline &amp; SLA Audit</h3>
           <div class="p-3.5 bg-nxCanvas rounded-xl border border-nxBorder space-y-2 text-slate-300">
-            <div class="flex justify-between"><span class="text-slate-500">Opened:</span><span id="drawerOpened">2026-04-30 19:51:00</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Resolved:</span><span id="drawerResolved">2026-04-30 21:47:00</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Actual Duration:</span><span id="drawerDuration" class="text-white font-bold">1.95 Hours</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">SLA Target:</span><span id="drawerTarget">8.0 Hours (P2)</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Opened:</span><span id="drawerOpened">2026-05-13 12:25:00 UTC</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Resolved:</span><span id="drawerResolved">2026-05-13 13:40:00 UTC</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Actual Duration:</span><span id="drawerDuration" class="text-white font-bold">1.25 Hours</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">SLA Target:</span><span id="drawerTarget">48.0 Hours (Priority 4)</span></div>
             <div class="flex justify-between items-center pt-1">
               <span class="text-slate-500">SLA Audit Status:</span>
               <span id="drawerSLAStatus" class="px-2 py-0.5 rounded text-[10px] font-bold bg-slaMet/20 text-slaMet border border-slaMet/30">COMPLIANT</span>
             </div>
             <div class="flex justify-between text-[11px] text-slate-400 pt-1 border-t border-nxBorder">
               <span>Contract Variance:</span>
-              <span id="drawerVariance" class="font-bold text-slate-300">-6.05h buffer</span>
+              <span id="drawerVariance" class="font-bold text-slate-300">46.75h buffer remaining</span>
             </div>
           </div>
         </div>
@@ -1553,9 +1553,9 @@
         <div class="space-y-3">
           <h3 class="text-[10px] uppercase text-slate-500 font-bold tracking-wider">Change &amp; Problem Intelligence</h3>
           <div class="p-3.5 bg-nxCanvas rounded-xl border border-nxBorder space-y-2 text-slate-300">
-            <div class="flex justify-between"><span class="text-slate-500">Contributing Factor:</span><span id="drawerFactor" class="text-changeCyan">Recent deployment</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Related Change:</span><span id="drawerChange" class="text-changeCyan font-bold">CHG300016</span></div>
-            <div class="flex justify-between"><span class="text-slate-500">Problem Candidate:</span><span id="drawerProblem" class="text-slate-400">No</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Contributing Factor:</span><span id="drawerFactor" class="text-changeCyan">Organic Service Event</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Related Change:</span><span id="drawerChange" class="text-slate-400">None (Organic Incident)</span></div>
+            <div class="flex justify-between"><span class="text-slate-500">Problem Candidate:</span><span id="drawerProblem" class="text-problemViolet font-bold">Yes (DBPOOL-001)</span></div>
             <div class="text-[10px] text-problemViolet pt-1" id="drawerProblemReason"></div>
           </div>
         </div>
